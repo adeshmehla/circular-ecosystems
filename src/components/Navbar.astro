@@ -1,0 +1,75 @@
+---
+---
+<nav id="nav">
+  <a class="brand" href="/" aria-label="Circular Ecosystems – home">
+    <img src="/logoofCE.png" alt="Circular Ecosystems" class="brand-logo" />
+  </a>
+  
+  <div class="navlinks">
+    <a href="/#problem">The problem</a>
+   <a href="/#outcomes">What changes</a>
+   <a href="/services">Services</a>
+   <a href="/#platform">Intelligence Arc</a>
+    <a href="/#insights">Insights</a>
+    <a href="/sequence" target="_blank">The Sequence Model</a>
+    <a href="/#contact" class="btn">Start a conversation</a>
+  </div>
+
+  <button class="menu-toggle" aria-label="Toggle Menu" id="menu-toggle">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="12" x2="21" y2="12" class="line1"></line>
+      <line x1="3" y1="6" x2="21" y2="6" class="line2"></line>
+      <line x1="3" y1="18" x2="21" y2="18" class="line3"></line>
+    </svg>
+  </button>
+</nav>  
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-nav-drawer" id="mobile-drawer">
+  <a href="/#problem" class="mobile-link">The problem</a>
+  <a href="/#outcomes" class="mobile-link">What changes</a>
+  <a href="/services" class="mobile-link">Services</a>
+  <a href="/#platform" class="mobile-link">Intelligence Arc</a>
+  <a href="/#insights" class="mobile-link">Insights</a>
+    <a href="/sequence" target="_blank" class="mobile-link">The Sequence Model</a>   
+  <a href="/#contact" class="btn mobile-link">Start a conversation</a>
+</div>
+
+<script>
+  // Sticky Nav on Scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      nav?.classList.add('solid');
+    } else {
+      nav?.classList.remove('solid');
+    }
+  });
+
+  // Mobile Drawer Toggle
+  const toggleBtn = document.getElementById('menu-toggle');
+  const drawer = document.getElementById('mobile-drawer');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  if (toggleBtn && drawer) {
+    toggleBtn.addEventListener('click', () => {
+      const isOpen = drawer.classList.toggle('open');
+      toggleBtn.classList.toggle('active');
+      
+      // Update icon states if necessary
+      if (isOpen) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        drawer.classList.remove('open');
+        toggleBtn.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+</script>

@@ -1,0 +1,77 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { createClient, OAuthStrategy } from '@wix/sdk';
+import { posts } from '@wix/blog';
+import { wixImageUrl } from '../../lib/wixImage';
+
+const wixClient = createClient({
+  modules: { posts },
+  auth: OAuthStrategy({
+    clientId: import.meta.env.PUBLIC_WIX_CLIENT_ID,
+  }),
+});
+
+const { slug } = Astro.params;
+
+let post: any = null;
+try {
+  const response = await wixClient.posts.listPosts({ paging: { limit: 100 } });
+  post = (response.posts || []).find((p: any) => p.slug === slug);
+} catch (e) {
+  console.error('Post fetch failed:', e);
+}
+
+if (!post) return Astro.redirect('/blog');
+
+const heroImgSrc = wixImageUrl(post.media?.wixMedia?.image, 1200, 600);
+---
+
+<Layout
+  title={`${post.title} — Circular Ecosystems`}
+  description={post.excerpt || 'Read this insight from Circular Ecosystems.'}
+>
+  <Navbar />
+  <article style="padding-top: 140px; padding-bottom: 120px; min-height: 80vh;">
+    <div class="wrap">
+
+      <a href="/blog" style="font-family:'DM Mono', monospace; font-size:12px; letter-spacing:.1em; color:var(--fg-faint); text-transform:uppercase; display:inline-flex; align-items:center; gap:8px; margin-bottom:48px;">
+        &larr; All insights
+      </a>
+
+      <div style="max-width: 800px; margin: 0 auto;">
+        <span class="kicker">{post.categories?.[0]?.label || 'Insight'}</span>
+        <h1 style="font-size: clamp(2rem,5vw,3.6rem); letter-spacing:-.035em; line-height:1.04; margin: 24px 0 20px; color:#F4F8F6;">
+          {post.title}
+        </h1>
+
+        {post.firstPublishedDate && (
+          <p style="font-family:'DM Mono', monospace; font-size:12px; color:var(--fg-faint); letter-spacing:.08em; margin-bottom:48px;">
+            {new Date(post.firstPublishedDate).toLocaleDateString('en-AU', { day:'numeric', month:'long', year:'numeric' })}
+          </p>
+        )}
+
+        {heroImgSrc && (
+          <div style="margin-bottom:56px; border-radius:3px; overflow:hidden; border:1px solid var(--line);">
+            <img
+              src={heroImgSrc}
+              alt={post.title}
+              style="width:100%; aspect-ratio:16/7; object-fit:cover;"
+              loading="eager"
+            />
+          </div>
+        )}
+
+        <div class="post-body">
+          <Fragment set:html={post.content || post.excerpt || ''} />
+        </div>
+
+        <div style="margin-top:80px; padding-top:40px; border-top:1px solid var(--line);">
+          <a href="/#contact" class="btn btn-solid">Start a conversation &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </article>
+  <Footer />
+</Layout>

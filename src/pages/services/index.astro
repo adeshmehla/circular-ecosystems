@@ -1,0 +1,1032 @@
+---
+import heroImage from '../../assets/photo_2.jpg';
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Net Zero Industrial Precincts &amp; Eco-Industrial Precinct Services | Circular Ecosystems</title>
+<meta name="description" content="Strategic industrial circularity from regional strategy to precinct delivery. Net zero industrial precinct design, eco-industrial park development, industrial symbiosis programs, whole-of-system modelling, and supply chain studies, built on the Khora decision intelligence engine.">
+<link rel="canonical" href="https://www.circularecosystems.io/services">
+<link rel="icon" type="image/png" href="/logoofCE.png">
+<link rel="apple-touch-icon" href="/logoofCE.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Services | Circular Ecosystems">
+<meta property="og:description" content="From regional strategy to precinct delivery. One substrate underneath all of it.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.circularecosystems.io/services">
+<meta property="og:site_name" content="Circular Ecosystems">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+
+<style is:inline>
+/* ===========================================================
+   CIRCULAR ECOSYSTEMS — SERVICES PAGE
+   Design tokens inherited verbatim from the master site.
+   =========================================================== */
+:root{
+  --ink:#050C0F;
+  --ink-2:#0A171C;
+  --ink-3:#0F2A33;
+  --forest:#004A5A;
+  --teal:#2C7881;
+  --mint:#C7F9D0;
+  --cream:#F6F2EA;
+  --paper:#F5F0E8;
+  --fg:#EAF2F0;
+  --fg-dim:#9FB4B2;
+  --fg-faint:#B8BFBE;
+  --line:rgba(199,249,208,0.12);
+  --maxw:1240px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:90px}
+body{
+  background:var(--ink);
+  color:var(--fg);
+  font-family:"DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:17px;line-height:1.6;font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--mint);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px}
+.mono{font-family:"DM Mono",ui-monospace,monospace}
+.kicker{
+  font-family:"DM Mono",ui-monospace,monospace;
+  font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--teal);display:inline-flex;align-items:center;gap:12px;
+}
+.kicker::before{content:"";width:28px;height:1px;background:var(--teal);display:inline-block}
+h1,h2,h3{font-weight:700;line-height:1.04;letter-spacing:-.02em;color:#F4F8F6}
+.display{
+  font-size:clamp(2.3rem,5.2vw,4.4rem);
+  font-weight:700;letter-spacing:-.035em;line-height:1.0;
+  text-shadow:0 2px 28px rgba(5,12,15,.55), 0 1px 4px rgba(5,12,15,.7);
+}
+.display em{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:500;color:var(--mint);letter-spacing:0}
+.h2{font-size:clamp(2rem,4.4vw,3.4rem);letter-spacing:-.03em;line-height:1.02}
+.lead{font-size:clamp(1.05rem,1.7vw,1.32rem);line-height:1.55;color:var(--fg-dim);font-weight:400;max-width:46ch}
+
+/* ---------- NAV ---------- */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px 40px;transition:all .5s var(--ease);
+  border-bottom:1px solid transparent;
+}
+nav.solid{
+  background:rgba(5,12,15,.72);backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);padding:14px 40px;
+  border-bottom:1px solid var(--line);
+}
+.brand{display:flex;align-items:center;gap:12px;font-weight:500;letter-spacing:.02em}
+.navlinks{display:flex;align-items:center;gap:30px}
+.navlinks a{font-size:13px;color:var(--fg-dim);transition:color .3s;letter-spacing:.01em}
+.navlinks a:hover{color:var(--mint)}
+.navlinks a[aria-current="page"]{color:var(--mint)}
+.btn{
+  font-family:"DM Mono",monospace;font-size:13px;letter-spacing:.04em;
+  padding:12px 22px;border:1px solid var(--teal);border-radius:2px;
+  color:var(--mint);background:transparent;cursor:pointer;
+  transition:all .35s var(--ease);position:relative;overflow:hidden;display:inline-block;
+  z-index:1;
+}
+.btn::after{content:"";position:absolute;inset:0;background:var(--mint);transform:translateY(101%);transition:transform .4s var(--ease);z-index:-1}
+.btn:hover, .btn2:hover{color:var(--ink) !important;border-color:var(--mint)}
+.btn:hover::after, .btn2:hover::after{transform:translateY(0)}
+.btn-solid{background:var(--mint);color:var(--ink);border-color:var(--mint);font-weight:500}
+.btn-solid::after{background:#a6e7b6}
+.btn-solid:hover{color:var(--ink) !important}
+.logo{height:25px;width:auto;display:block}
+nav.solid .logo{height:24px}
+footer .footbrand .logo{height:30px;margin-bottom:18px}
+
+/* ---------- PAGE HERO ---------- */
+header{position:relative;min-height:90vh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);animation:slowzoom 22s var(--ease) forwards;filter:saturate(.85) contrast(1.05)}
+@keyframes slowzoom{to{transform:scale(1)}}
+.hero-bg::after{content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(120% 90% at 70% 30%, rgba(0,74,90,.30), transparent 60%),
+    linear-gradient(180deg, rgba(5,12,15,.76) 0%, rgba(5,12,15,.66) 38%, rgba(5,12,15,.94) 86%, var(--ink) 100%);
+}
+.hero-bg::before{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(90deg, rgba(5,12,15,.88) 0%, rgba(5,12,15,.38) 52%, transparent 100%);}
+#net{position:absolute;inset:0;z-index:2;opacity:.5;pointer-events:none}
+.hero-inner{position:relative;z-index:5;width:100%}
+.hero-inner .wrap{padding-top:132px;padding-bottom:60px}
+.eyebrow-row{overflow:hidden;margin-bottom:28px}
+.hero h1{margin:0 0 30px;max-width:19ch}
+.hero .lead{margin-bottom:36px;max-width:60ch}
+.hero-cta{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.fade-up{opacity:0;transform:translateY(20px);animation:fadeup .9s var(--ease) forwards}
+.d1{animation-delay:.12s}.d2{animation-delay:.26s}.d3{animation-delay:.4s}.d4{animation-delay:.54s}
+@keyframes fadeup{to{opacity:1;transform:translateY(0)}}
+.hero-meta{margin-top:46px;padding-top:22px;border-top:1px solid var(--line);max-width:80ch}
+.hero-meta .mono{font-size:12px;color:var(--fg-faint);letter-spacing:.12em}
+
+/* ---------- SECTIONS ---------- */
+section{position:relative;padding:130px 0}
+.sec-head{max-width:62ch;margin-bottom:56px}
+.sec-head h2{margin-top:22px}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+
+/* ---------- SERVICE INDEX ---------- */
+.services{background:linear-gradient(180deg,var(--ink),var(--ink-2))}
+.svc-jump{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 54px}
+.jchip{font-family:"DM Mono",monospace;font-size:11.5px;letter-spacing:.06em;color:var(--fg-dim);
+  border:1px solid var(--line);border-radius:2px;padding:9px 14px;background:transparent;cursor:pointer;
+  transition:border-color .35s,color .35s,background .35s;text-transform:uppercase}
+.jchip:hover,.jchip.on{border-color:var(--teal);color:var(--mint);background:rgba(199,249,208,.05)}
+.svc-list{border-top:1px solid var(--line)}
+.svc-item{border-bottom:1px solid var(--line)}
+.svc-head{display:flex;align-items:flex-start;gap:26px;padding:34px 4px;cursor:pointer;user-select:none;width:100%;background:none;border:0;text-align:left;font-family:inherit;color:inherit}
+.svc-head .n{font-family:"DM Mono",monospace;font-size:13px;color:var(--teal);letter-spacing:.06em;min-width:30px;padding-top:9px}
+.svc-headings{flex:1}
+.svc-cat{display:block;font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-faint);margin-bottom:12px;transition:color .35s}
+.svc-head h3{font-size:clamp(1.2rem,2.1vw,1.62rem);letter-spacing:-.02em;font-weight:700;color:#F4F8F6;transition:color .35s;line-height:1.22;max-width:34ch}
+.svc-head h3 em{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:500;color:var(--teal);letter-spacing:0;font-size:1.14em;transition:color .35s}
+.svc-item:hover .svc-head h3,.svc-item.open .svc-head h3{color:var(--mint)}
+.svc-item:hover .svc-head h3 em,.svc-item.open .svc-head h3 em{color:var(--mint)}
+.svc-item.open .svc-cat{color:var(--teal)}
+.svc-head .ic{position:relative;width:16px;height:16px;flex-shrink:0;margin-top:12px}
+.svc-head .ic::before,.svc-head .ic::after{content:"";position:absolute;background:var(--teal);transition:transform .4s var(--ease),background .35s}
+.svc-head .ic::before{top:7px;left:0;width:16px;height:2px}
+.svc-head .ic::after{left:7px;top:0;width:2px;height:16px}
+.svc-item.open .svc-head .ic::after{transform:scaleY(0)}
+.svc-item.open .svc-head .ic::before{background:var(--mint)}
+.svc-body{max-height:0;overflow:hidden;opacity:0;transition:max-height .6s var(--ease),opacity .5s var(--ease)}
+.svc-item.open .svc-body{opacity:1}
+.svc-inner{padding:6px 0 46px 56px}
+.svc-who{font-size:1.02rem;line-height:1.55;color:var(--fg-dim);max-width:70ch;padding:20px 24px;border-left:2px solid var(--teal);background:rgba(44,120,129,.08);border-radius:0 2px 2px 0;margin-bottom:38px}
+.svc-who b{color:#F4F8F6;font-weight:500;font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:8px;color:var(--mint)}
+.svc-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.svc-col{background:var(--ink-2);padding:34px 30px 36px}
+.svc-col h4{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:400;margin-bottom:22px;display:flex;align-items:center;gap:10px}
+.svc-col h4::after{content:"";flex:1;height:1px;background:var(--line)}
+.svc-col.pay h4{color:var(--mint)}
+.svc-col ul{list-style:none;display:flex;flex-direction:column;gap:16px}
+.svc-col li{position:relative;padding-left:20px;color:var(--fg-dim);font-size:.97rem;line-height:1.52}
+.svc-col li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:1px;background:var(--teal)}
+.svc-col.pay li{color:#DCEAE6}
+.svc-col.pay li::before{background:var(--mint)}
+.svc-foot{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:26px}
+.svc-book{font-family:"DM Mono",monospace;font-size:13px;color:var(--mint);display:inline-flex;align-items:center;gap:8px;transition:gap .3s;cursor:pointer;background:none;border:0}
+.svc-book:hover{gap:16px}
+.svc-ref{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.1em;color:var(--fg-faint);text-transform:uppercase}
+
+/* ---------- ROLES ---------- */
+.roles{background:var(--ink-2)}
+.role-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:8px}
+.role{background:var(--ink-2);padding:42px 40px;transition:background .5s var(--ease);position:relative}
+.role:hover{background:#0c1f25}
+.role .rtag{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.1em;color:var(--teal);text-transform:uppercase}
+.role h3{font-size:1.18rem;line-height:1.32;margin:20px 0 14px;letter-spacing:-.01em;max-width:32ch}
+.role p{color:var(--fg-dim);font-size:.98rem;line-height:1.55;max-width:44ch}
+.role .mark{position:absolute;top:44px;right:40px;width:7px;height:7px;border-radius:50%;background:var(--line);transition:all .5s var(--ease)}
+.role:hover .mark{background:var(--mint);box-shadow:0 0 14px var(--mint)}
+
+/* ---------- PROCUREMENT (inverted) ---------- */
+.proc{background:var(--cream);color:var(--ink-3)}
+.proc .kicker{color:var(--forest)}
+.proc .kicker::before{background:var(--forest)}
+.proc h2{color:var(--forest);font-size:clamp(2rem,4.4vw,3.3rem);margin:26px 0 20px;letter-spacing:-.03em;line-height:1.04;max-width:20ch}
+.proc .plead{font-size:clamp(1.05rem,1.7vw,1.28rem);line-height:1.6;color:#243b40;max-width:56ch}
+.proc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(0,74,90,.16);border:1px solid rgba(0,74,90,.16);margin-top:60px}
+.proc-cell{background:var(--cream);padding:40px 38px}
+.proc-cell .pn{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.14em;color:var(--teal);text-transform:uppercase}
+.proc-cell p{margin-top:18px;color:#243b40;font-size:1.02rem;line-height:1.58;max-width:44ch}
+.proc-cta{margin-top:54px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.proc .btn{border-color:var(--forest);color:var(--forest)}
+.proc .btn::after{background:var(--forest)}
+.proc .btn:hover{color:var(--cream);border-color:var(--forest)}
+.proc-note{font-family:"DM Mono",monospace;font-size:12.5px;color:#4a6168;letter-spacing:.02em;max-width:46ch;line-height:1.7}
+
+/* ---------- CTA ---------- */
+.cta{position:relative;background:var(--ink);overflow:hidden;padding:150px 0}
+.cta-bg{position:absolute;inset:0;z-index:0}
+.cta-bg img{width:100%;height:100%;object-fit:cover;filter:saturate(.7) brightness(.5)}
+.cta-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--ink),rgba(5,12,15,.78) 40%,var(--ink))}
+.cta .wrap{position:relative;z-index:3}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.cta h2{font-size:clamp(2.2rem,5vw,4rem);letter-spacing:-.035em;line-height:1.0}
+.cta .lead{margin-top:28px;max-width:40ch}
+.cta .contact-line{margin-top:40px;font-family:"DM Mono",monospace;font-size:13px;color:var(--fg-dim);letter-spacing:.04em;line-height:2}
+.cta .contact-line a{color:var(--mint)}
+form{display:flex;flex-direction:column;gap:18px}
+.field label{display:block;font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.1em;color:var(--fg-faint);text-transform:uppercase;margin-bottom:8px}
+.field input,.field textarea{
+  width:100%;background:rgba(255,255,255,.03);border:1px solid var(--line);
+  border-radius:2px;padding:14px 16px;color:var(--fg);font-family:"DM Sans",sans-serif;
+  font-size:15px;transition:border-color .3s,background .3s;
+}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--teal);background:rgba(199,249,208,.04)}
+.field textarea{resize:vertical;min-height:96px}
+.formrow{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+
+/* ---------- FORM STATES ---------- */
+.hidden{display:none !important}
+.form-error{
+  background-color:#a82e2e;border:1px solid rgba(226,30,30,0.4);
+  color:#ffffff;padding:14px 18px;border-radius:2px;font-size:0.875rem;
+}
+.form-success{
+  text-align:center;padding:40px 20px;
+  background:rgba(199,249,208,0.05);border:1px solid var(--line);border-radius:2px;
+}
+.success-icon{
+  width:52px;height:52px;background:var(--mint);color:var(--ink);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;margin:0 auto 16px;font-weight:bold;
+}
+.form-success h3{color:var(--mint);font-size:1.25rem;margin:0 0 8px}
+.form-success p{color:var(--fg-dim);font-size:0.95rem;margin:0}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--ink);border-top:1px solid var(--line);padding:70px 0 50px}
+.footgrid{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap}
+.footbrand{max-width:340px}
+.footbrand .brand{margin-bottom:18px}
+.footbrand p{color:var(--fg-faint);font-size:14px;line-height:1.6}
+.footmeta{font-family:"DM Mono",monospace;font-size:12px;color:var(--fg-faint);letter-spacing:.06em;text-align:right;line-height:2}
+.footmeta a:hover{color:var(--mint)}
+.footbottom{margin-top:54px;padding-top:26px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-family:"DM Mono",monospace;font-size:11px;color:var(--fg-faint);letter-spacing:.06em}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:1240px){
+  .navlinks{gap:22px}
+  .navlinks a{font-size:12.5px}
+  .btn{padding:11px 18px;font-size:12.5px}
+}
+@media(max-width:1080px){
+  .svc-cols{grid-template-columns:1fr}
+  .svc-col{padding:30px 28px 32px}
+}
+@media(max-width:980px){
+  .wrap{padding:0 24px}
+  nav{padding:18px 24px}
+  .navlinks{display:none}
+  .cta-grid,.formrow{grid-template-columns:1fr;gap:48px}
+  .role-grid,.proc-grid{grid-template-columns:1fr}
+  section{padding:90px 0}
+  .hero-inner .wrap{padding-top:130px}
+  .svc-inner{padding-left:0}
+  .svc-head{gap:18px}
+}
+@media(max-width:560px){
+  .svc-head .n{min-width:24px;font-size:12px}
+  .role{padding:34px 28px}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="brand" href="/" aria-label="Circular Ecosystems - home"><img class="logo" src="/logoofCE.png" alt="Circular Ecosystems"></a>
+  <div class="navlinks">
+    <a href="/#problem">The problem</a>
+    <a href="/#outcomes">What changes</a>
+    <a href="/services" aria-current="page">Services</a>
+    <a href="/#platform">Intelligence Arc</a>
+    <a href="/#insights">Insights</a>
+    <a href="/sequence" target="_blank">The Sequence Model</a>
+    <a href="#contact" class="btn">Start a conversation</a>
+  </div>
+</nav>
+
+<!-- ============ PAGE HERO ============ -->
+<header id="top" class="hero">
+  <div class="hero-bg"><img src={heroImage.src} alt="Industrial precinct at dusk"></div>
+  <canvas id="net"></canvas>
+  <div class="hero-inner">
+    <div class="wrap">
+      <div class="eyebrow-row"><span class="kicker fade-up">Services &middot; Strategic industrial circularity</span></div>
+      <h1 class="display fade-up d1">From regional strategy to precinct delivery. One <em>substrate</em> underneath all of it.</h1>
+      <p class="lead fade-up d2">The market calls this work net zero industrial precincts, eco-industrial precincts, industrial symbiosis, circular economy hubs. Underneath the labels it is a set of upstream decisions about governance, geometry, tenant mix, and capital sequence that determine whether a regional industrial system compounds or strands. Each service below is a bounded engagement: a defined question, a fixed price, a deliverable that survives scrutiny after we leave the room.</p>
+      <div class="hero-cta fade-up d3">
+        <a href="#services" class="btn btn-solid">See the eight services</a>
+        <a href="#contact" class="btn btn2">Book a briefing</a>
+      </div>
+      <div class="hero-meta fade-up d4">
+        <span class="mono">Eight bounded engagements &middot; Fixed lump sum &middot; Government procurement ready</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ SERVICE INDEX ============ -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker reveal">The engagements</span>
+      <h2 class="h2 reveal d1">Eight ways in. The same substrate underneath every one.</h2>
+      <p class="lead reveal d2" style="margin-top:22px;max-width:58ch">Open the engagement that matches the decision in front of you. Each one names the problem it answers, the work it covers, and what you hold at the end of it.</p>
+    </div>
+
+    <div class="svc-jump reveal d2" id="jump"></div>
+
+    <div class="svc-list reveal d2" id="svcList">
+
+      <!-- 01 -->
+      <div class="svc-item" id="s01" data-svc="01">
+        <button class="svc-head" aria-expanded="false">
+          <span class="n">01</span>
+          <span class="svc-headings">
+            <span class="svc-cat">Regional circularity strategy</span>
+            <h3>A regional circular economy strategy that <em>treasury</em> can fund.</h3>
+          </span>
+          <span class="ic"></span>
+        </button>
+        <div class="svc-body"><div class="svc-inner">
+          <p class="svc-who"><b>Who it is for</b>State agencies, regional development commissions, and corridor authorities carrying a regional industrial transition mandate.</p>
+          <div class="svc-cols">
+            <div class="svc-col"><h4>The problem</h4><ul>
+              <li>Your region has been named in a strategy: a hydrogen hub, a critical minerals corridor, a renewable energy industrial precinct.</li>
+              <li>The announcements arrive as project portfolios; the question they raise is a system one.</li>
+              <li>Nobody holds the answers to what the region's water, energy, land, and logistics can actually carry.</li>
+              <li>The current geometry is quietly foreclosing exchanges nobody has mapped.</li>
+            </ul></div>
+            <div class="svc-col"><h4>What we do</h4><ul>
+              <li>Resource flow inventories across the operator base, with verified mass and energy balances.</li>
+              <li>Carrying capacity envelopes across the binding constraints.</li>
+              <li>Cascade exposure mapping across the operator network.</li>
+              <li>Leverage arithmetic showing where a unit of public investment releases multiples of private capital.</li>
+              <li>A sequenced regional strategy rather than an aggregated one, every investment ranked against the system it lands in.</li>
+            </ul></div>
+            <div class="svc-col pay"><h4>What you get</h4><ul>
+              <li>A regional circularity strategy that can be interrogated line by line when treasury asks how the numbers were built.</li>
+              <li>An investment sequence with leverage projections.</li>
+              <li>A Khora instance the region keeps querying after the document is delivered.</li>
+            </ul></div>
+          </div>
+          <div class="svc-foot">
+            <button class="svc-book" data-service="Service 01 · Regional circularity strategy">Book a briefing on this engagement &rarr;</button>
+            <span class="svc-ref">Service 01 &middot; Regional circularity strategy</span>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- 02 -->
+      <div class="svc-item" id="s02" data-svc="02">
+        <button class="svc-head" aria-expanded="false">
+          <span class="n">02</span>
+          <span class="svc-headings">
+            <span class="svc-cat">Government capital allocation &middot; System funding</span>
+            <h3>Strategic decision-making for the capital that <em>everything else</em> lands on.</h3>
+          </span>
+          <span class="ic"></span>
+        </button>
+        <div class="svc-body"><div class="svc-inner">
+          <p class="svc-who"><b>Who it is for</b>Treasury and central agencies, infrastructure and industry departments, funding authorities, and program owners allocating public capital into industrial transition.</p>
+          <div class="svc-cols">
+            <div class="svc-col"><h4>The problem</h4><ul>
+              <li>Your funding architecture assesses projects one at a time; each business case is defensible and the portfolio still underperforms.</li>
+              <li>The outcomes the program is pursuing depend on coordination across projects that no single proponent owns.</li>
+              <li>Enabling infrastructure gets funded after the projects that need it, or before the demand that justifies it.</li>
+              <li>Public capital clears single-digit leverage while coordination-first sequences run an order of magnitude higher, and the gap never shows on the program's own dashboard.</li>
+            </ul></div>
+            <div class="svc-col"><h4>What we do</h4><ul>
+              <li>Portfolio-level assessment reading every business case against the same substrate rather than in isolation.</li>
+              <li>Sequencing analysis that orders enabling infrastructure, common-user assets, and tenant-specific capital so early moves create the conditions later moves require.</li>
+              <li>Leverage arithmetic on where public investment changes conditions on the ground.</li>
+              <li>Funding architecture design where the program cycle itself needs restructuring.</li>
+              <li>Gateway reviews of live business cases against the system model before the money commits.</li>
+            </ul></div>
+            <div class="svc-col pay"><h4>What you get</h4><ul>
+              <li>A capital allocation framework your program can actually administer.</li>
+              <li>An investment sequence with leverage projections and stranded-asset risk priced.</li>
+              <li>Enabling infrastructure priorities backed by demand evidence rather than proponent assertion.</li>
+              <li>Analysis that holds up in estimates, in audit, and in front of the proponents who missed the round.</li>
+            </ul></div>
+          </div>
+          <div class="svc-foot">
+            <button class="svc-book" data-service="Service 02 · Government capital allocation">Book a briefing on this engagement &rarr;</button>
+            <span class="svc-ref">Service 02 &middot; Government capital allocation</span>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- 03 -->
+      <div class="svc-item" id="s03" data-svc="03">
+        <button class="svc-head" aria-expanded="false">
+          <span class="n">03</span>
+          <span class="svc-headings">
+            <span class="svc-cat">Whole-of-system modelling &middot; Cross-government visibility</span>
+            <h3>One model of the system every department is <em>separately</em> deciding on.</h3>
+          </span>
+          <span class="ic"></span>
+        </button>
+        <div class="svc-body"><div class="svc-inner">
+          <p class="svc-who"><b>Who it is for</b>Central agencies, planning bodies, and portfolio departments whose projects, approvals, and capital all land in the same regional industrial systems.</p>
+          <div class="svc-cols">
+            <div class="svc-col"><h4>The problem</h4><ul>
+              <li>Decisions about the same region sit across departments that report vertically and coordinate horizontally only by meeting.</li>
+              <li>Each agency holds a fragment: infrastructure has the pipeline, environment has the constraints, treasury has the capital, planning has the land. Nobody holds the system.</li>
+              <li>Systemic risks accumulate in the gaps between portfolios; projects that clear individually can be incompatible together.</li>
+              <li>Carrying capacity depletes incrementally across separate approvals, none of which trips a threshold on its own.</li>
+              <li>Every briefing that needs the whole picture gets assembled by hand, from scratch, against a deadline.</li>
+            </ul></div>
+            <div class="svc-col"><h4>What we do</h4><ul>
+              <li>Instantiate a single system model across the region: every project, capital commitment, approval, and constraint in one substrate.</li>
+              <li>Configure cross-department views on the same data: treasury sees capital exposure and leverage, planning sees land and admissions, regulators see cumulative load and remaining headroom.</li>
+              <li>Build the systemic risk register: cascade exposures, cross-portfolio incompatibilities, single points of failure, quantified before they bind.</li>
+              <li>Surface systemic efficiencies: shared infrastructure, co-location, and exchange opportunities invisible from inside any one department's dataset.</li>
+              <li>Hold the carrying capacity envelope live, so every proposed project is tested against actual remaining headroom.</li>
+              <li>Design the governance for the shared model, so departments contribute data without surrendering control of it.</li>
+            </ul></div>
+            <div class="svc-col pay"><h4>What you get</h4><ul>
+              <li>A standing cross-department view of projects, capital, risks, and carrying capacity, queried on demand instead of assembled per briefing.</li>
+              <li>A systemic risk register and a systemic efficiency register, held at the centre and updated as the pipeline moves.</li>
+              <li>Cabinet and expenditure review submissions backed by a model every relevant department has already interrogated.</li>
+              <li>An end to duplicated analysis across departments commissioning partial versions of the same study.</li>
+            </ul></div>
+          </div>
+          <div class="svc-foot">
+            <button class="svc-book" data-service="Service 03 · Whole-of-system modelling">Book a briefing on this engagement &rarr;</button>
+            <span class="svc-ref">Service 03 &middot; Whole-of-system modelling</span>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- 04 -->
+      <div class="svc-item" id="s04" data-svc="04">
+        <button class="svc-head" aria-expanded="false">
+          <span class="n">04</span>
+          <span class="svc-headings">
+            <span class="svc-cat">Net zero industrial precincts &middot; Eco-industrial precincts</span>
+            <h3>Precinct design that gets the <em>geometry</em> right before the geometry locks.</h3>
+          </span>
+          <span class="ic"></span>
+        </button>
+        <div class="svc-body"><div class="svc-inner">
+          <p class="svc-who"><b>Who it is for</b>Precinct proponents, industrial land developers, governing bodies, and agencies establishing net zero industrial precincts, eco-industrial parks, or renewable energy industrial precincts.</p>
+          <div class="svc-cols">
+            <div class="svc-col"><h4>The problem</h4><ul>
+              <li>Every net zero industrial precinct pitch leads with shared infrastructure; almost none resolve the questions that decide whether it ever materialises.</li>
+              <li>Steam exchange dies beyond roughly two kilometres, water beyond three to five, industrial gas beyond eight to fifteen.</li>
+              <li>Lot sizing, setbacks, and anchor placement are decided years before any symbiosis program is articulated; once the first anchor commits, the viability of every later exchange is set.</li>
+              <li>Precincts designed as land subdivisions with a decarbonisation narrative become standalone tenants on a shared address.</li>
+            </ul></div>
+            <div class="svc-col"><h4>What we do</h4><ul>
+              <li>Run eco-industrial precinct design in the order that produces functioning systems: governance instrument first, system model second, capital sequence third.</li>
+              <li>Tenant admission rules grounded in actual carrying capacity.</li>
+              <li>Density and distance analysis with viability envelopes for each candidate exchange.</li>
+              <li>Common-user infrastructure cases with tenancy design.</li>
+              <li>Alignment with the international eco-industrial park framework where certification or investor reporting requires it.</li>
+            </ul></div>
+            <div class="svc-col pay"><h4>What you get</h4><ul>
+              <li>A precinct blueprint that can be presented to a board, a minister, or a funding body and defended under questioning.</li>
+              <li>Governance instruments with legal force, and an admission test the governing body owns.</li>
+              <li>An investment sequence with stranded-asset risk priced.</li>
+              <li>A Khora instance configured to the precinct from day one.</li>
+            </ul></div>
+          </div>
+          <div class="svc-foot">
+            <button class="svc-book" data-service="Service 04 · Net zero and eco-industrial precincts">Book a briefing on this engagement &rarr;</button>
+            <span class="svc-ref">Service 04 &middot; Net zero and eco-industrial precincts</span>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- 05 -->
+      <div class="svc-item" id="s05" data-svc="05">
+        <button class="svc-head" aria-expanded="false">
+          <span class="n">05</span>
+          <span class="svc-headings">
+            <span class="svc-cat">Resource recovery precincts</span>
+            <h3>A defensible planning pathway <em>before</em> you commission the masterplan.</h3>
+          </span>
+          <span class="ic"></span>
+        </button>
+        <div class="svc-body"><div class="svc-inner">
+          <p class="svc-who"><b>Who it is for</b>Local government waste and resource recovery managers, precinct owners, shire and city executives.</p>
+          <div class="svc-cols">
+            <div class="svc-col"><h4>The problem</h4><ul>
+              <li>Your busiest site runs on aged infrastructure with known safety exposures.</li>
+              <li>A processing operation is relocating, a neighbouring site is closing and redirecting its traffic to yours, and population growth compounds underneath both.</li>
+              <li>Commissioning the masterplan now means paying for design before the critical unknowns are resolved: contamination actuals, land constraints, easements through Crown or Aboriginal land.</li>
+              <li>Councils that skip the pathway step buy over-design early and remediation surprises late.</li>
+            </ul></div>
+            <div class="svc-col"><h4>What we do</h4><ul>
+              <li>Define the staged pathway: which studies, in what order, and why each one gates the next.</li>
+              <li>Preliminary gap and risk analysis across operational data, site constraints, and regulatory settings.</li>
+              <li>Best-practice review of how comparable councils staged their circular economy facility investigations.</li>
+              <li>Decision gateways that tell your council when to spend and when to defer.</li>
+              <li>Procurement advice on whether later stages go to market as one consultancy or parcels of work, with indicative effort attached.</li>
+            </ul></div>
+            <div class="svc-col pay"><h4>What you get</h4><ul>
+              <li>A planning pathway report with a visual roadmap built for council briefings.</li>
+              <li>A preliminary risk register keyed to the planning sequence rather than construction.</li>
+              <li>RFQ-ready scopes for the stages that follow.</li>
+              <li>A masterplan decision your council makes knowing the cost, the dependencies, and what remains unknown.</li>
+            </ul></div>
+          </div>
+          <div class="svc-foot">
+            <button class="svc-book" data-service="Service 05 · Resource recovery precincts">Book a briefing on this engagement &rarr;</button>
+            <span class="svc-ref">Service 05 &middot; Resource recovery precincts</span>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- 06 -->
+      <div class="svc-item" id="s06" data-svc="06">
+        <button class="svc-head" aria-expanded="false">
+          <span class="n">06</span>
+          <span class="svc-headings">
+            <span class="svc-cat">Industrial decarbonisation supply chains</span>
+            <h3>Map the supply chains your industrial strategy <em>assumes</em> exist.</h3>
+          </span>
+          <span class="ic"></span>
+        </button>
+        <div class="svc-body"><div class="svc-inner">
+          <p class="svc-who"><b>Who it is for</b>State economic development and industry agencies; policy and program leads carrying supply chain, industrial land, or heavy industry decarbonisation strategy.</p>
+          <div class="svc-cols">
+            <div class="svc-col"><h4>The problem</h4><ul>
+              <li>Heavy industry is re-equipping: electrification, hydrogen production, critical minerals processing, transmission build-out, the purchases the Safeguard Mechanism is forcing onto capital plans.</li>
+              <li>Your strategy documents assume the supply chains for that equipment exist and will deliver on schedule.</li>
+              <li>Nobody has mapped where they concentrate, which single points of failure they route through, or what a constrained port does to the pipeline.</li>
+            </ul></div>
+            <div class="svc-col"><h4>What we do</h4><ul>
+              <li>Identify and map the critical supply chains for the technologies and infrastructure the strategy depends on.</li>
+              <li>Assess risks, opportunities, and barriers against recognised supply chain resilience frameworks.</li>
+              <li>Structured engagement across the agencies, utilities, ports, and operators who hold the actual data.</li>
+              <li>Test every supply chain assumption against the carrying capacity envelopes of the precincts, corridors, and ports it routes through. A chain that clears on paper and fails on water headroom is the finding that matters.</li>
+            </ul></div>
+            <div class="svc-col pay"><h4>What you get</h4><ul>
+              <li>Mapped supply chains with risks and barriers attached to specific chain stages.</li>
+              <li>Findings built on verifiable data, capable of withstanding independent external scrutiny.</li>
+              <li>A report written for a government audience that can anchor business cases and survive public release.</li>
+              <li>A briefing your executive can put in front of a minister.</li>
+            </ul></div>
+          </div>
+          <div class="svc-foot">
+            <button class="svc-book" data-service="Service 06 · Industrial decarbonisation supply chains">Book a briefing on this engagement &rarr;</button>
+            <span class="svc-ref">Service 06 &middot; Industrial decarbonisation supply chains</span>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- 07 -->
+      <div class="svc-item" id="s07" data-svc="07">
+        <button class="svc-head" aria-expanded="false">
+          <span class="n">07</span>
+          <span class="svc-headings">
+            <span class="svc-cat">Strategic industrial areas</span>
+            <h3>Program governance for industrial land, with a <em>system model</em> underneath it.</h3>
+          </span>
+          <span class="ic"></span>
+        </button>
+        <div class="svc-body"><div class="svc-inner">
+          <p class="svc-who"><b>Who it is for</b>State industrial land agencies and divisions activating multiple strategic industrial areas at once.</p>
+          <div class="svc-cols">
+            <div class="svc-col"><h4>The problem</h4><ul>
+              <li>Industrial areas are being activated across the state simultaneously, with common-user infrastructure, headworks, and tenant pipelines spread across delivery agencies.</li>
+              <li>Funding accountability sits with you; delivery sits elsewhere; visibility travels by spreadsheet.</li>
+              <li>A conventional program office tells you what is late. It cannot tell you what the delay does to the tenant pipeline in another precinct, because it holds a schedule, not a system.</li>
+            </ul></div>
+            <div class="svc-col"><h4>What we do</h4><ul>
+              <li>Stand up an integrated program office inside your division, with complete separation from anyone's business-as-usual interests.</li>
+              <li>Governance across funding sources and tracking of funded works.</li>
+              <li>Coordination across the agencies who build what you fund.</li>
+              <li>Every funded work tracked against the system model, so a delayed substation reads as what it is: a binding constraint on the next three tenant admissions, quantified before the minister's office asks.</li>
+            </ul></div>
+            <div class="svc-col pay"><h4>What you get</h4><ul>
+              <li>A functioning PMO with funding governance that survives audit.</li>
+              <li>Reporting that treasury and the minister's office both accept.</li>
+              <li>A live view of what each slippage costs the pipeline rather than the schedule.</li>
+            </ul></div>
+          </div>
+          <div class="svc-foot">
+            <button class="svc-book" data-service="Service 07 · Strategic industrial areas">Book a briefing on this engagement &rarr;</button>
+            <span class="svc-ref">Service 07 &middot; Strategic industrial areas</span>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- 08 -->
+      <div class="svc-item" id="s08" data-svc="08">
+        <button class="svc-head" aria-expanded="false">
+          <span class="n">08</span>
+          <span class="svc-headings">
+            <span class="svc-cat">Industrial symbiosis programs</span>
+            <h3>The analytical bench <em>behind</em> the coordinator title.</h3>
+          </span>
+          <span class="ic"></span>
+        </button>
+        <div class="svc-body"><div class="svc-inner">
+          <p class="svc-who"><b>Who it is for</b>Regional strategy coordinators inside development commissions, industrial symbiosis program managers inside state commerce departments, cluster and industry council executives.</p>
+          <div class="svc-cols">
+            <div class="svc-col"><h4>The problem</h4><ul>
+              <li>These roles carry a system-scale mandate on a two-or-three-person team.</li>
+              <li>A Coordinator Regional Strategy at a WA development commission holds investment attraction, precinct activation, grant pipelines, and cross-agency alignment for an entire region.</li>
+              <li>A program manager running Washington State's Industrial Symbiosis Program holds grant rounds that need prioritisation logic and outcomes that need quantifying.</li>
+              <li>The mandate assumes an analytical substrate the role has never been given, which is why symbiosis programs worldwide report activity while Kalundborg, which measures realised exchanges, gets the reputation.</li>
+            </ul></div>
+            <div class="svc-col"><h4>What we do</h4><ul>
+              <li>Operate as the bench behind the role, structured as a retainer or per grant round, sized to a program budget rather than a capital one.</li>
+              <li>Resource flow inventories across the operator base.</li>
+              <li>Exchange opportunity surfacing.</li>
+              <li>Grant and project prioritisation run against the system model rather than application quality.</li>
+              <li>A measurement architecture that quantifies realised exchanges, so the program reports outcomes instead of workshops held.</li>
+            </ul></div>
+            <div class="svc-col pay"><h4>What you get</h4><ul>
+              <li>A substrate your program queries on demand.</li>
+              <li>Prioritisation you can defend to applicants who missed out.</li>
+              <li>Quantified outcomes for the annual report.</li>
+              <li>A program that can defend its next budget line with numbers.</li>
+            </ul></div>
+          </div>
+          <div class="svc-foot">
+            <button class="svc-book" data-service="Service 08 · Industrial symbiosis programs">Book a briefing on this engagement &rarr;</button>
+            <span class="svc-ref">Service 08 &middot; Industrial symbiosis programs</span>
+          </div>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROLES ============ -->
+<section class="roles" id="roles">
+  <div class="wrap">
+    <div class="sec-head" style="max-width:60ch">
+      <span class="kicker reveal">Who holds these decisions</span>
+      <h2 class="h2 reveal d1">Built for the people who hold these roles.</h2>
+      <p class="lead reveal d2" style="margin-top:22px">If your title is on this list, one of the services above was scoped with your desk in mind.</p>
+    </div>
+    <div class="role-grid">
+      <div class="role reveal"><span class="mark"></span>
+        <span class="rtag">Service 02</span>
+        <h3>Deputy secretary or program owner, treasury, infrastructure, or industry portfolio</h3>
+        <p>Service 02 puts a system under your capital allocation before the next funding round locks it.</p>
+      </div>
+      <div class="role reveal d1"><span class="mark"></span>
+        <span class="rtag">Service 03</span>
+        <h3>Central agency or cross-portfolio coordination lead</h3>
+        <p>Service 03 gives every department one model of the projects, capital, risks, and carrying capacity they are separately deciding on.</p>
+      </div>
+      <div class="role reveal"><span class="mark"></span>
+        <span class="rtag">Service 08 &middot; Service 01</span>
+        <h3>Coordinator Regional Strategy, regional development commission (South West WA)</h3>
+        <p>Service 08 is your bench; Service 01 is the regional strategy your investment attraction case is missing.</p>
+      </div>
+      <div class="role reveal d1"><span class="mark"></span>
+        <span class="rtag">Service 08</span>
+        <h3>Industrial Symbiosis Program lead, Washington State Department of Commerce</h3>
+        <p>Service 08 gives your grant rounds prioritisation logic and your program a measurement architecture.</p>
+      </div>
+      <div class="role reveal"><span class="mark"></span>
+        <span class="rtag">Service 04</span>
+        <h3>Net zero industrial precinct or eco-industrial park proponent</h3>
+        <p>Service 04 resolves the governance and geometry questions before the first anchor tenant locks them.</p>
+      </div>
+      <div class="role reveal d1"><span class="mark"></span>
+        <span class="rtag">Service 07 &middot; Service 06</span>
+        <h3>Program director, strategic industrial areas division, state government</h3>
+        <p>Service 07 is the PMO; Service 06 maps the supply chains your precinct pipeline assumes.</p>
+      </div>
+      <div class="role reveal"><span class="mark"></span>
+        <span class="rtag">Service 05</span>
+        <h3>Waste and resource recovery services manager, local government</h3>
+        <p>Service 05 gets you to a defensible masterplan decision without buying the masterplan first.</p>
+      </div>
+      <div class="role reveal d1"><span class="mark"></span>
+        <span class="rtag">Service 08</span>
+        <h3>Executive officer, industry council or cluster board</h3>
+        <p>Service 08 turns your member base into a measured exchange network.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCUREMENT (inverted) ============ -->
+<section class="proc" id="procurement">
+  <div class="wrap">
+    <span class="kicker reveal">Commercial terms</span>
+    <h2 class="reveal d1">Scoped the way you buy.</h2>
+    <p class="plead reveal d2">Each engagement is scoped so a single procurement covers a decision rather than an open-ended program.</p>
+    <div class="proc-grid">
+      <div class="proc-cell reveal"><span class="pn">Contracting</span>
+        <p>Fixed lump sum, milestone payments, AS 4122 or state general conditions, insurances held at government thresholds.</p></div>
+      <div class="proc-cell reveal d1"><span class="pn">Panels and portals</span>
+        <p>We respond through Tenders WA, VendorPanel, NSW and NT quotation frameworks, and US state procurement processes.</p></div>
+      <div class="proc-cell reveal"><span class="pn">Scope discipline</span>
+        <p>Every engagement resolves a defined question and closes, so the deliverable can be tested against the decision it was bought to inform.</p></div>
+      <div class="proc-cell reveal d1"><span class="pn">Before you go to market</span>
+        <p>Drafting an RFQ and want the scope tested before it goes to market? That conversation costs nothing.</p></div>
+    </div>
+    <div class="proc-cta reveal d2">
+      <a href="#contact" class="btn">Book a briefing &rarr;</a>
+      <span class="proc-note">Circular Ecosystems is an independent systems orchestrator, engaged as advisor rather than as a proponent of any downstream work.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="cta-grid">
+      <div>
+        <span class="kicker reveal">Book a briefing</span>
+        <h2 class="reveal d1" style="margin-top:22px">Name the engagement. We will scope it against your procurement.</h2>
+        <p class="lead reveal d2">Tell us which of the eight fits the decision in front of you, or describe the decision and we will tell you which one it is.</p>
+        <div class="contact-line reveal d3">
+          <a href="mailto:hello@circularecosystems.io">hello@circularecosystems.io</a><br>
+          Perth, Western Australia<br>
+          Working with industrial precincts and regional corridors worldwide
+        </div>
+      </div>
+      <div class="reveal d2">
+        <form id="services-form">
+          <div class="form-fields-container">
+            <div class="formrow">
+              <div class="field"><label for="svc-name">Name *</label><input type="text" id="svc-name" name="name" required></div>
+              <div class="field"><label for="svc-org">Organisation</label><input type="text" id="svc-org" name="organisation"></div>
+            </div>
+            <div class="field"><label for="svc-email">Email *</label><input type="email" id="svc-email" name="email" required></div>
+            <div class="field"><label for="serviceField">Service of interest</label><input type="text" name="service" id="serviceField" placeholder="Select a service above, or leave blank"></div>
+            <div class="field"><label for="svc-decision">The decision you are facing *</label><textarea id="svc-decision" name="decision" placeholder="What is the call, and what is riding on it?" required></textarea></div>
+          </div>
+          
+          <div id="svc-form-error" class="form-error hidden" style="margin-top:16px;"></div>
+          
+          <div id="svc-form-success" class="form-success hidden">
+            <div class="success-icon">✓</div>
+            <h3>Briefing Request Received</h3>
+            <p>Thank you. One of our directors will review your inquiry against the precinct catalog and get back to you within 24 hours.</p>
+          </div>
+
+          <div class="form-footer-action" style="margin-top:18px;">
+            <button type="submit" id="svc-submit-btn" class="btn btn-solid">Send it through</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footgrid">
+    <div class="footbrand">
+      <a class="brand" href="/" aria-label="Circular Ecosystems - home"><img class="logo" src="/logoofCE.png" alt="Circular Ecosystems"></a>
+      <p>An independent systems orchestrator for industrial transition, regional development, and government capital allocation.</p>
+    </div>
+    <div class="footmeta">
+      <a href="/#problem">The problem</a><br>
+      <a href="/#outcomes">What changes</a><br>
+      <a href="/services">Services</a><br>
+      <a href="/#platform">Intelligence Arc</a><br>
+      <a href="/#insights">Insights &amp; briefings</a><br>
+      <a href="/sequence" target="_blank">The Sequence Model</a><br>
+      <a href="#contact">Start a conversation</a>
+    </div>
+  </div>
+  <div class="wrap footbottom">
+    <span>&copy; 2026 Circular Ecosystems. All rights reserved. &middot; Perth, Western Australia.</span>
+    <span>See the whole system. Make the right move.</span>
+  </div>
+</footer>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context":"https://schema.org",
+  "@type":"ItemList",
+  "name":"Circular Ecosystems services",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"item":{"@type":"Service","name":"Regional circularity strategy","serviceType":"Regional circular economy strategy","provider":{"@type":"Organization","name":"Circular Ecosystems","url":"https://www.circularecosystems.io"},"areaServed":"AU"}},
+    {"@type":"ListItem","position":2,"item":{"@type":"Service","name":"Government capital allocation and system funding","serviceType":"Public investment sequencing and funding architecture","provider":{"@type":"Organization","name":"Circular Ecosystems"}}},
+    {"@type":"ListItem","position":3,"item":{"@type":"Service","name":"Whole-of-system modelling and cross-government visibility","serviceType":"Whole-of-system modelling","provider":{"@type":"Organization","name":"Circular Ecosystems"}}},
+    {"@type":"ListItem","position":4,"item":{"@type":"Service","name":"Net zero industrial precincts and eco-industrial precincts","serviceType":"Eco-industrial precinct design","provider":{"@type":"Organization","name":"Circular Ecosystems"}}},
+    {"@type":"ListItem","position":5,"item":{"@type":"Service","name":"Resource recovery precincts","serviceType":"Resource recovery precinct planning pathway","provider":{"@type":"Organization","name":"Circular Ecosystems"}}},
+    {"@type":"ListItem","position":6,"item":{"@type":"Service","name":"Industrial decarbonisation supply chains","serviceType":"Supply chain mapping and resilience assessment","provider":{"@type":"Organization","name":"Circular Ecosystems"}}},
+    {"@type":"ListItem","position":7,"item":{"@type":"Service","name":"Strategic industrial areas","serviceType":"Industrial land program governance","provider":{"@type":"Organization","name":"Circular Ecosystems"}}},
+    {"@type":"ListItem","position":8,"item":{"@type":"Service","name":"Industrial symbiosis programs","serviceType":"Industrial symbiosis program analytics","provider":{"@type":"Organization","name":"Circular Ecosystems"}}}
+  ]
+})}>
+</script>
+
+<script is:inline>
+// nav solid on scroll
+const nav=document.getElementById('nav');
+if (nav) {
+  addEventListener('scroll',()=>{nav.classList.toggle('solid',window.scrollY>40)});
+}
+
+// reveal observer
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// hero constellation
+(function(){
+  const c=document.getElementById('net');if(!c)return;
+  const x=c.getContext('2d');
+  let w,h,nodes,mx=-999,my=-999;
+  const COL='199,249,208';
+  function size(){w=c.width=window.innerWidth;h=c.height=Math.max(c.parentElement.offsetHeight,window.innerHeight);init()}
+  function init(){
+    const n=Math.min(58,Math.round(w*h/28000));
+    nodes=Array.from({length:n},()=>({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.22,vy:(Math.random()-.5)*.22,r:Math.random()*1.6+.6}));
+  }
+  function frame(){
+    x.clearRect(0,0,w,h);
+    for(const p of nodes){
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>w)p.vx*=-1; if(p.y<0||p.y>h)p.vy*=-1;
+      const dx=p.x-mx,dy=p.y-my,dm=Math.hypot(dx,dy);
+      if(dm<140){p.x+=dx/dm*.5;p.y+=dy/dm*.5}
+    }
+    for(let i=0;i<nodes.length;i++){
+      for(let j=i+1;j<nodes.length;j++){
+        const a=nodes[i],b=nodes[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+        if(d<132){x.strokeStyle='rgba('+COL+','+(.13*(1-d/132))+')';x.lineWidth=1;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}
+      }
+    }
+    for(const p of nodes){x.fillStyle='rgba('+COL+',.55)';x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fill()}
+    requestAnimationFrame(frame);
+  }
+  addEventListener('resize',size);
+  addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
+  addEventListener('mouseout',()=>{mx=-999;my=-999});
+  size();frame();
+})();
+
+// service accordion, jump chips, and briefing prefill
+(function(){
+  const items=[...document.querySelectorAll('.svc-item')];
+  const jump=document.getElementById('jump');
+
+  function setHeight(item){
+    const body=item.querySelector('.svc-body');
+    if(body) {
+      body.style.maxHeight=item.classList.contains('open')?body.scrollHeight+'px':'0px';
+    }
+  }
+  function openItem(item,scroll){
+    items.forEach(o=>{
+      const on=o===item;
+      o.classList.toggle('open',on);
+      const head = o.querySelector('.svc-head');
+      if(head) head.setAttribute('aria-expanded',on?'true':'false');
+      setHeight(o);
+    });
+    document.querySelectorAll('.jchip').forEach(ch=>ch.classList.toggle('on',ch.dataset.target===item.id));
+    if(scroll){
+      const y=item.getBoundingClientRect().top+window.scrollY-96;
+      scrollTo({top:y,behavior:'smooth'});
+    }
+  }
+
+  items.forEach(item=>{
+    const catEl=item.querySelector('.svc-cat');
+    const cat=catEl ? catEl.textContent.split('\u00b7')[0].trim() : '';
+    const chip=document.createElement('button');
+    chip.className='jchip';chip.dataset.target=item.id;
+    chip.textContent=item.dataset.svc+'  '+cat;
+    chip.addEventListener('click',()=>openItem(item,true));
+    if(jump) jump.appendChild(chip);
+
+    const headBtn = item.querySelector('.svc-head');
+    if (headBtn) {
+      headBtn.addEventListener('click',()=>{
+        const isOpen=item.classList.contains('open');
+        if(isOpen){
+          item.classList.remove('open');
+          headBtn.setAttribute('aria-expanded','false');
+          setHeight(item);
+          document.querySelectorAll('.jchip').forEach(ch=>ch.classList.remove('on'));
+        }else{openItem(item,false)}
+      });
+    }
+    setHeight(item);
+  });
+  
+  addEventListener('resize',()=>items.forEach(setHeight));
+
+  // briefing prefill
+  const field=document.getElementById('serviceField');
+  document.querySelectorAll('.svc-book').forEach(b=>{
+    b.addEventListener('click',()=>{
+      if(field)field.value=b.dataset.service;
+      const contactSec = document.getElementById('contact');
+      if (contactSec) contactSec.scrollIntoView({behavior:'smooth'});
+    });
+  });
+
+  // deep link: /services?service=04 or ?service=4 opens that engagement
+  const q=new URLSearchParams(window.location.search).get('service');
+  if(q){
+    const formattedNum = q.padStart(2,'0');
+    const target=items.find(i=>i.dataset.svc===formattedNum);
+    if(target)setTimeout(()=>openItem(target,true),320);
+  }
+})();
+
+// ============================================================
+// SERVICES FORM — Wix submission (outside accordion IIFE)
+// ============================================================
+(function() {
+  console.log('[Services Form] Initialising form handler...');
+  const servicesForm = document.getElementById("services-form");
+
+  if (!servicesForm) {
+    console.error('[Services Form] ERROR: #services-form element not found in DOM!');
+    return;
+  }
+
+  console.log('[Services Form] Form element found. Attaching submit listener.');
+
+  servicesForm.addEventListener("submit", async function(e) {
+    e.preventDefault();
+    console.log('[Services Form] Submit triggered.');
+
+    const errorDiv = document.getElementById("svc-form-error");
+    const successDiv = document.getElementById("svc-form-success");
+    const submitBtn = document.getElementById("svc-submit-btn");
+    const fieldsContainer = servicesForm.querySelector(".form-fields-container");
+    const footerAction = servicesForm.querySelector(".form-footer-action");
+
+    // Reset error state
+    if (errorDiv) {
+      errorDiv.textContent = "";
+      errorDiv.classList.add("hidden");
+    }
+
+    const nameEl = document.getElementById("svc-name");
+    const orgEl = document.getElementById("svc-org");
+    const emailEl = document.getElementById("svc-email");
+    const serviceEl = document.getElementById("serviceField");
+    const decisionEl = document.getElementById("svc-decision");
+
+    const name = nameEl ? nameEl.value.trim() : "";
+    const organisation = orgEl ? orgEl.value.trim() : "";
+    const email = emailEl ? emailEl.value.trim() : "";
+    const service = serviceEl ? serviceEl.value.trim() : "";
+    const decision = decisionEl ? decisionEl.value.trim() : "";
+
+    console.log('[Services Form] Values collected:', { name, organisation, email, service, decision });
+
+    // Validation
+    if (!name) {
+      console.warn('[Services Form] Validation failed: name is empty.');
+      if (errorDiv) { errorDiv.textContent = "Please enter your name."; errorDiv.classList.remove("hidden"); }
+      return;
+    }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      console.warn('[Services Form] Validation failed: invalid email.');
+      if (errorDiv) { errorDiv.textContent = "Please enter a valid email address."; errorDiv.classList.remove("hidden"); }
+      return;
+    }
+
+    // Disable submit button
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Sending..."; }
+
+    try {
+      console.log('[Services Form] POSTing to /api/services...');
+      const res = await fetch("/api/services", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, organisation, email, service, decision })
+      });
+
+      console.log('[Services Form] Response status:', res.status);
+      const data = await res.json();
+      console.log('[Services Form] Response data:', data);
+
+      if (res.ok && data.success) {
+        console.log('[Services Form] Submission successful!');
+        if (fieldsContainer) fieldsContainer.style.display = "none";
+        if (footerAction) footerAction.style.display = "none";
+        if (successDiv) successDiv.classList.remove("hidden");
+      } else {
+        console.error('[Services Form] Server returned error:', data.error);
+        if (errorDiv) {
+          errorDiv.textContent = data.error || "Submission failed. Please try again.";
+          errorDiv.classList.remove("hidden");
+        }
+      }
+    } catch (err) {
+      console.error('[Services Form] Network/fetch error:', err);
+      if (errorDiv) {
+        errorDiv.textContent = "Network error. Please try again or email us directly at hello@circularecosystems.io.";
+        errorDiv.classList.remove("hidden");
+      }
+    } finally {
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = "Send it through"; }
+    }
+  });
+})();
+</script>
+</body>
+</html>

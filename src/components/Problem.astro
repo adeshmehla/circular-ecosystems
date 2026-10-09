@@ -1,0 +1,129 @@
+---
+import problemImage from '../assets/problem.jpg';
+---
+
+<section class="problem" id="problem">
+  <div class="wrap split">
+    <div>
+      <span class="kicker reveal">The problem</span>
+      <h2 class="h2 reveal d1">The projects are sound; the system underneath them isn&rsquo;t sequenced yet.</h2>
+      <p class="reveal d2">
+        Public money gets committed to a smelter, a hydrogen plant, or a processing node before anyone has mapped the shared infrastructure, the feedstock, and the governance those projects actually depend on.
+      </p>
+      <p class="reveal d2">
+        When the system can&rsquo;t receive the project, the value strands. No subsidy fixes that after the fact, because density and distance get locked in the moment the land is allocated.
+      </p>
+      <div class="pullnum reveal d3">
+        Most of the exposure is invisible at the point of commitment, which is exactly when it&rsquo;s still <b>time to change.</b>
+      </div>
+    </div>
+    
+    <div class="figframe reveal d2">
+ <img 
+        src={problemImage.src}
+        alt="Bulk export terminal"
+      />
+      <span class="figcap">When a project arrives, can the system receive it?</span>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Simple canvas simulation of nodes representing the precinct sequencing
+  const canvas = document.getElementById('precinct-net') as HTMLCanvasElement;
+  const ctx = canvas?.getContext('2d');
+
+  if (canvas && ctx) {
+    let animationId: number;
+    let width = 0;
+    let height = 0;
+
+    const nodes = [
+      { x: 0.2, y: 0.3, label: 'Feedstock', active: true, size: 5, pulse: 0 },
+      { x: 0.5, y: 0.2, label: 'Shared Power', active: false, size: 6, pulse: 0.5 },
+      { x: 0.8, y: 0.4, label: 'Smelter Node', active: false, size: 7, pulse: 0 },
+      { x: 0.3, y: 0.7, label: 'Water Loop', active: true, size: 5, pulse: 0.8 },
+      { x: 0.6, y: 0.8, label: 'Hydrogen Plant', active: false, size: 8, pulse: 0.2 },
+      { x: 0.5, y: 0.5, label: 'Precinct Hub', active: true, size: 10, pulse: 0.4 }
+    ];
+
+    function resize() {
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width;
+      canvas.height = rect.height;
+      width = canvas.width;
+      height = canvas.height;
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    function draw() {
+      if (!ctx || !canvas) return;
+      ctx.clearRect(0, 0, width, height);
+
+      // Draw connections
+      ctx.strokeStyle = 'rgba(44, 120, 129, 0.25)';
+      ctx.lineWidth = 1;
+
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          // Check logical connection
+          if (
+            (i === 0 && j === 5) || 
+            (i === 1 && j === 5) || 
+            (i === 3 && j === 5) || 
+            (i === 5 && j === 2) || 
+            (i === 5 && j === 4) ||
+            (i === 1 && j === 2)
+          ) {
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x * width, nodes[i].y * height);
+            ctx.lineTo(nodes[j].x * width, nodes[j].y * height);
+            ctx.stroke();
+
+            // Draw flow particles on lines
+            const t = (Date.now() / 3000 + i * 0.2) % 1;
+            const px = (1 - t) * (nodes[i].x * width) + t * (nodes[j].x * width);
+            const py = (1 - t) * (nodes[i].y * height) + t * (nodes[j].y * height);
+            
+            ctx.beginPath();
+            ctx.arc(px, py, 2, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(199, 249, 208, 0.7)';
+            ctx.fill();
+          }
+        }
+      }
+
+      // Draw nodes
+      nodes.forEach(node => {
+        const nx = node.x * width;
+        const ny = node.y * height;
+
+        // Pulse ring
+        node.pulse += 0.015;
+        const radius = node.size + Math.sin(node.pulse) * 4;
+        ctx.beginPath();
+        ctx.arc(nx, ny, radius, 0, Math.PI * 2);
+        ctx.strokeStyle = node.active ? 'rgba(199, 249, 208, 0.15)' : 'rgba(44, 120, 129, 0.12)';
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+
+        // Node center
+        ctx.beginPath();
+        ctx.arc(nx, ny, node.size / 2, 0, Math.PI * 2);
+        ctx.fillStyle = node.active ? 'var(--mint)' : 'var(--teal)';
+        ctx.fill();
+
+        // Node Label
+        ctx.font = '9px monospace';
+        ctx.fillStyle = 'var(--fg-dim)';
+        ctx.fillText(node.label, nx - 25, ny - node.size - 4);
+      });
+
+      animationId = requestAnimationFrame(draw);
+    }
+
+    draw();
+  }
+</script>

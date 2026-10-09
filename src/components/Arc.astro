@@ -1,0 +1,215 @@
+---
+import khoraImage1 from '../assets/arckhora1.jpg';
+import khoraImage2 from '../assets/arckhora2.jpg';
+import Kosmos from '../assets/Kosmos.png';
+---
+<section class="arc" id="platform">
+  <div class="wrap">
+    <div class="arc-head">
+      <span class="kicker reveal">The intelligence arc</span>
+      <h2 class="arc-title reveal d1">Reveal. Shape. <em>Monitor.</em></h2>
+      <p class="arc-sub reveal d2">Three layers, in sequence. The plan can&rsquo;t drift from the data, and the operating layer can&rsquo;t drift from the plan.</p>
+    </div>
+
+    <!-- Interactive stage nodes -->
+    <div class="arc-stage reveal d2">
+      <button class="arc-node active" data-layer="khora" id="node-khora">
+        <span class="nlabel">01 &middot; Khora</span>
+        <span class="ncircle"><span class="glyph">&#967;</span></span>
+        <span class="nname">REVEAL</span>
+        <span class="nsub">what&rsquo;s actually there</span>
+        <span class="nlayer">Data layer</span>
+      </button>
+      
+      <span class="arc-conn">
+        <svg viewBox="0 0 200 130" preserveAspectRatio="none">
+          <path class="lz" d="M2,65 Q100,18 198,65"></path>
+          <path class="lz" d="M2,65 Q100,112 198,65"></path>
+          <circle class="fl" r="2.6">
+            <animateMotion dur="3.6s" repeatCount="indefinite" path="M2,65 Q100,18 198,65"></animateMotion>
+          </circle>
+          <circle class="fl" r="2.6">
+            <animateMotion dur="4.4s" begin="-1.6s" repeatCount="indefinite" path="M198,65 Q100,112 2,65"></animateMotion>
+          </circle>
+        </svg>
+      </span>
+      
+      <button class="arc-node" data-layer="morphe" id="node-morphe">
+        <span class="nlabel">02 &middot; Morphē</span>
+        <span class="ncircle"><span class="glyph">&#956;</span></span>
+        <span class="nname">SHAPE</span>
+        <span class="nsub">what survives questioning</span>
+        <span class="nlayer">Defensible plan</span>
+      </button>
+      
+      <span class="arc-conn">
+        <svg viewBox="0 0 200 130" preserveAspectRatio="none">
+          <path class="lz" d="M2,65 Q100,18 198,65"></path>
+          <path class="lz" d="M2,65 Q100,112 198,65"></path>
+          <circle class="fl" r="2.6">
+            <animateMotion dur="3.9s" begin="-.8s" repeatCount="indefinite" path="M2,65 Q100,18 198,65"></animateMotion>
+          </circle>
+          <circle class="fl" r="2.6">
+            <animateMotion dur="4.2s" begin="-2.2s" repeatCount="indefinite" path="M198,65 Q100,112 2,65"></animateMotion>
+          </circle>
+        </svg>
+      </span>
+      
+      <button class="arc-node" data-layer="kosmos" id="node-kosmos">
+        <span class="nlabel">03 &middot; Kosmos</span>
+        <span class="ncircle"><span class="glyph">&#954;</span></span>
+        <span class="nname">MONITOR</span>
+        <span class="nsub">what was committed</span>
+        <span class="nlayer">Live operations</span>
+      </button>
+    </div>
+
+    <!-- Layer details panels -->
+    <div class="arc-detail">
+    <!-- Khora Panel -->
+<div class="apanel active" data-layer="khora" id="panel-khora">
+  <div class="apanel-text">
+    <span class="atag">01 &middot; Khora</span>
+    <h3>Intelligence engine.</h3>
+    <p>Quantifies cascade exposure, carrying capacity, contamination risk, and stranded-asset exposure before capital commits. Persona views run from the operator on the floor up to the minister signing the cheque.</p>
+  </div>
+  <div class="apanel-vis">
+    <div class="shot big">
+      <img src={khoraImage1.src} alt="Khora intelligence view one" />
+      <span class="lbl">SYSTEM LEVEL UNDERSTANDING
+</span>
+    </div>
+    <div class="shot">
+      <img src={khoraImage2.src} alt="Khora intelligence view two" />
+      <span class="lbl">PROPONENT IMPACT</span>
+    </div>
+  </div>
+</div>
+
+      <!-- Morphe Panel -->
+      <div class="apanel" data-layer="morphe" id="panel-morphe">
+        <div class="apanel-text">
+          <span class="atag">02 &middot; Morphē</span>
+          <h3>Transition blueprint.</h3>
+          <p>Builds the governance, the sequencing, the tenant logic, and the capital architecture that stands up to board, regulator, funder, and auditor questioning.</p>
+        </div>
+        <div class="apanel-vis">
+          <div class="motif-frame">
+            <svg width="100%" viewBox="0 0 680 360" role="img" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+<title>Morphē Transformation Blueprint sequencing chart</title>
+<desc>Seven-step chart showing the Transformation Blueprint sequence from Discovery through Phased Implementation, leading to Kosmos.</desc>
+<defs>
+  <style>
+    .label { font-family: 'DM Sans', Arial, sans-serif; font-size: 12px; fill: #f5f2ed; }
+    .mono  { font-family: 'DM Mono', 'Courier New', monospace; }
+  </style>
+</defs>
+
+<rect x="0" y="0" width="680" height="360" fill="#0f1114" rx="10"/>
+
+<text x="24" y="26" class="mono" font-size="10" fill="#1a6b6b" letter-spacing="2" font-weight="500">MORPHĒ · TRANSFORMATION BLUEPRINT</text>
+<text x="24" y="46" font-family="Georgia, serif" font-size="17" fill="#f5f2ed" font-weight="500">Sequenced delivery plan</text>
+<line x1="24" y1="56" x2="656" y2="56" stroke="#1d2939" stroke-width="0.5"/>
+
+<text x="24" y="80" class="mono" font-size="9" fill="#1a6b6b" letter-spacing="1">01</text>
+<text x="44" y="80" class="label">Discovery and vision alignment</text>
+<rect x="300" y="68" width="340" height="16" rx="3" fill="#1a6b6b"/>
+<line x1="24" y1="88" x2="656" y2="88" stroke="#1d2939" stroke-width="0.5"/>
+
+<text x="24" y="108" class="mono" font-size="9" fill="#1a6b6b" letter-spacing="1">02</text>
+<text x="44" y="108" class="label">Governance architecture</text>
+<rect x="330" y="96" width="310" height="16" rx="3" fill="#1a6b6b"/>
+<line x1="24" y1="116" x2="656" y2="116" stroke="#1d2939" stroke-width="0.5"/>
+
+<text x="24" y="136" class="mono" font-size="9" fill="#1a6b6b" letter-spacing="1">03</text>
+<text x="44" y="136" class="label">System vulnerability mapping</text>
+<rect x="360" y="124" width="280" height="16" rx="3" fill="#1a6b6b"/>
+<line x1="24" y1="144" x2="656" y2="144" stroke="#1d2939" stroke-width="0.5"/>
+
+<text x="24" y="164" class="mono" font-size="9" fill="#1a6b6b" letter-spacing="1">04</text>
+<text x="44" y="164" class="label">Dynamic scenario modelling</text>
+<rect x="390" y="152" width="250" height="16" rx="3" fill="#1a6b6b"/>
+<line x1="24" y1="172" x2="656" y2="172" stroke="#1d2939" stroke-width="0.5"/>
+
+<text x="24" y="192" class="mono" font-size="9" fill="#1a6b6b" letter-spacing="1">05</text>
+<text x="44" y="192" class="label">Ecosystem and symbiosis design</text>
+<rect x="420" y="180" width="220" height="16" rx="3" fill="#1a6b6b"/>
+<line x1="24" y1="200" x2="656" y2="200" stroke="#1d2939" stroke-width="0.5"/>
+
+<text x="24" y="220" class="mono" font-size="9" fill="#1a6b6b" letter-spacing="1">06</text>
+<text x="44" y="220" class="label">Sector positioning</text>
+<rect x="450" y="208" width="190" height="16" rx="3" fill="#1a6b6b"/>
+<line x1="24" y1="228" x2="656" y2="228" stroke="#1d2939" stroke-width="0.5"/>
+
+<text x="24" y="248" class="mono" font-size="9" fill="#1a6b6b" letter-spacing="1">07</text>
+<text x="44" y="248" class="label">Phased implementation</text>
+<rect x="480" y="236" width="160" height="16" rx="3" fill="#1a6b6b"/>
+<line x1="24" y1="256" x2="656" y2="256" stroke="#1d2939" stroke-width="1"/>
+
+<text x="24"  y="282" class="mono" font-size="9" fill="#b8903a" letter-spacing="1">NEXT</text>
+<text x="64"  y="282" class="label">Hands to Kosmos</text>
+<text x="64"  y="298" class="mono" font-size="9" fill="#6b6760">Live monitoring · value intelligence · system feedback</text>
+<rect x="510" y="270" width="130" height="16" rx="3" fill="#b8903a"/>
+<text x="514" y="281" class="mono" font-size="8" fill="#f0dfa8">Operations phase begins</text>
+
+<line x1="24" y1="320" x2="656" y2="320" stroke="#1d2939" stroke-width="0.5"/>
+<rect x="24"  y="330" width="10" height="10" rx="2" fill="#1a6b6b"/>
+<text x="38"  y="339" class="mono" font-size="9" fill="#6b6760">Active delivery phase</text>
+<rect x="190" y="330" width="10" height="10" rx="2" fill="#b8903a"/>
+<text x="204" y="339" class="mono" font-size="9" fill="#6b6760">Kosmos handoff</text>
+<text x="340" y="339" class="mono" font-size="9" fill="#6b6760">Indicative · scope varies by engagement</text>
+</svg>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Kosmos Panel -->
+      <div class="apanel" data-layer="kosmos" id="panel-kosmos">
+        <div class="apanel-text">
+          <span class="atag">03 &middot; Kosmos</span>
+          <h3>Operating intelligence.</h3>
+          <p>Watches the live ecosystem against the operating envelope and the cascade register, and flags drift from the governance commitments the blueprint locked in. The layer runs on a federated, interoperable data space, so each operator keeps custody of its own data while the whole system still reads as one.</p>
+          <div class="kchips">
+            <span class="kchip">Federated data space</span>
+            <span class="kchip">Interoperable by design</span>
+            <span class="kchip">Digital product passports</span>
+            <span class="kchip">Live cascade register</span>
+          </div>
+        </div>
+        <div class="apanel-vis">
+          <div class="shot big">
+            <img src={Kosmos.src} alt="Kosmos operating intelligence view" />
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <p class="arc-foot reveal">Each layer feeds the next. <b>Reveal sets the envelope, Shape sets the plan, Monitor keeps both honest.</b></p>
+  </div>
+</section>
+
+<script>
+  const nodes = document.querySelectorAll('.arc-node');
+  const panels = document.querySelectorAll('.apanel');
+
+  nodes.forEach(node => {
+    node.addEventListener('mouseover', () => {
+      // Deactivate other nodes
+      nodes.forEach(n => n.classList.remove('active'));
+      // Activate selected node
+      node.classList.add('active');
+
+      const targetLayer = node.getAttribute('data-layer');
+
+      // Swap detail panels
+      panels.forEach(panel => {
+        if (panel.getAttribute('data-layer') === targetLayer) {
+          panel.classList.add('active');
+        } else {
+          panel.classList.remove('active');
+        }
+      });
+    });
+  });
+</script>

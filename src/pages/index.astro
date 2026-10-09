@@ -1,8 +1,53 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import Problem from "../components/Problem.astro";
+import Outcomes from "../components/Outcomes.astro";
+import Arc from "../components/Arc.astro";
+import Record from "../components/Record.astro";
+import DecisionMakers from "../components/DecisionMakers.astro";
+import Sectors from "../components/Sectors.astro";
+import About from "../components/About.astro";
+import Team from "../components/Team.astro";
+import Insights from "../components/Insights.astro";
+import ContactForm from "../components/ContactForm.astro";
+import Footer from "../components/Footer.astro";
+
 ---
 
 <Layout>
-	<Welcome />
+  <Navbar />
+  <main>
+    <Hero />
+    <Problem />
+    <Outcomes />
+    <Arc />
+    <Record />
+    <DecisionMakers />
+    <Sectors />
+    <About />
+    <Team />
+    <Insights />
+    <ContactForm />
+  </main>
+  <Footer />
 </Layout>
+
+<script>
+  const revealElements = document.querySelectorAll('.reveal');
+  if (revealElements.length > 0) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.05, rootMargin: '0px 0px -40px 0px' }
+    );
+    revealElements.forEach((el) => observer.observe(el));
+  }
+</script>

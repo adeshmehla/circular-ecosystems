@@ -1,0 +1,233 @@
+---
+import footerImage from '../assets/contact.jpg';
+---
+
+<section class="cta" id="contact">
+
+  <!-- Background Image -->
+  <div class="cta-bg">
+    <img
+      src={footerImage.src}
+      alt="Industrial precinct at dusk"
+      loading="lazy"
+    />
+  </div>
+
+  <div class="wrap">
+    <div class="cta-grid">
+
+      <!-- Left Side -->
+      <div>
+        <span class="kicker reveal">Start a conversation</span>
+
+        <h2 class="h2 reveal d1">
+          Sequence your precinct before you commit.
+        </h2>
+
+        <p class="lead reveal d2">
+          Whether you are committing capital to a pipeline or allocating land
+          for a corridor, the sequencing has to match the system. Let&rsquo;s run
+          the numbers.
+        </p>
+
+        <div class="contact-line reveal d3">
+          Circular Ecosystems &middot; Decision Intelligence<br />
+          Perth, Western Australia<br />
+          Inquiries:
+          <a href="mailto:hello@circularecosystems.io">
+            hello@circularecosystems.io
+          </a>
+        </div>
+      </div>
+
+      <!-- Right side: Contact form -->
+      <div class="reveal d2">
+        <form id="contact-form">
+          <!-- Form Section Fields -->
+          <div class="form-fields-container">
+            <div class="field">
+              <label for="name">Your name *</label>
+              <input type="text" id="name" name="name" placeholder="" required />
+            </div>
+            
+            <div class="formrow">
+              <div class="field">
+                <label for="email_7950">Email address *</label>
+                <input type="email" id="email_7950" name="email_7950" placeholder="" required />
+              </div>
+              <div class="field">
+                <label for="organisation">Organization</label>
+                <input type="text" id="organisation" name="organisation" placeholder="" />
+              </div>
+            </div>
+            
+            <div class="field">
+              <label for="service_interest">Service of interest</label>
+              <select id="service_interest" name="service_interest">
+                <option value="">— Select a service (optional) —</option>
+                <option value="System Sequencing">01 · System Sequencing</option>
+                <option value="Funding Architecture Review">02 · Funding Architecture Review</option>
+                <option value="Carrying Capacity Assessment">03 · Carrying Capacity Assessment</option>
+                <option value="Anchor Tenant Analysis">04 · Anchor Tenant Analysis</option>
+                <option value="Shared Infrastructure Design">05 · Shared Infrastructure Design</option>
+                <option value="Governance Framework Design">06 · Governance Framework Design</option>
+                <option value="Cascade Risk Mapping">07 · Cascade Risk Mapping</option>
+                <option value="Independent Orchestration Retainer">08 · Independent Orchestration Retainer</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="the_decision_you_are_facing">The decision you are facing *</label>
+              <textarea id="the_decision_you_are_facing" name="the_decision_you_are_facing" placeholder="" required></textarea>
+            </div>
+            <!-- Hidden: auto-populated from ?paper= URL param. Never shown to the user. -->
+            <div aria-hidden="true" style="display:none;position:absolute;left:-9999px;">
+              <input type="text" id="paper_name" name="paper_name" tabindex="-1" autocomplete="off" />
+            </div>
+          </div>
+          
+          <!-- State Displays -->
+          <div id="form-error" class="form-error hidden"></div>
+          
+          <div id="form-success" class="form-success hidden">
+            <div class="success-icon">✓</div>
+            <h3>Conversation Started</h3>
+            <p>Thank you. One of our directors will review your inquiry against the precinct catalog and get back to you within 24 hours.</p>
+          </div>
+          
+          <!-- Submit Controls -->
+          <div class="form-footer-action">
+            <button type="submit" id="submit-btn" class="btn btn-solid">Send message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const errorContainer = document.getElementById("form-error") as HTMLDivElement;
+  const successContainer = document.getElementById("form-success") as HTMLDivElement;
+  const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement;
+  const fieldsContainer = document.querySelector(".form-fields-container") as HTMLDivElement;
+  const footerAction = document.querySelector(".form-footer-action") as HTMLDivElement;
+
+  function showError(message: string) {
+    if (errorContainer) {
+      errorContainer.textContent = message;
+      errorContainer.classList.remove("hidden");
+      errorContainer.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }
+
+  function clearError() {
+    if (errorContainer) {
+      errorContainer.textContent = "";
+      errorContainer.classList.add("hidden");
+    }
+  }
+
+  function showSuccess() {
+    if (fieldsContainer && successContainer && footerAction) {
+      fieldsContainer.style.display = "none";
+      footerAction.style.display = "none";
+      successContainer.classList.remove("hidden");
+      successContainer.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }
+
+  function validateEmail(email: string): boolean {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  // Read ?paper= from the URL and silently pre-fill the hidden field.
+  // This runs once on page load; no visible UI change for the user.
+  const paperInput = document.getElementById("paper_name") as HTMLInputElement;
+
+  if (paperInput) {
+    const params = new URLSearchParams(window.location.search);
+    const requestedPaper = params.get("paper");
+    paperInput.value = requestedPaper ?? "Didn't request a paper";
+  }
+
+  // Read ?service_interest= from the URL and pre-select the matching option.
+  const serviceSelect = document.getElementById("service_interest") as HTMLSelectElement;
+  if (serviceSelect) {
+    const params = new URLSearchParams(window.location.search);
+    const requestedService = params.get("service_interest");
+    if (requestedService) {
+      // Try exact match first, then decoded
+      const decoded = decodeURIComponent(requestedService.replace(/\+/g, ' '));
+      for (let i = 0; i < serviceSelect.options.length; i++) {
+        if (serviceSelect.options[i].value === decoded || serviceSelect.options[i].value === requestedService) {
+          serviceSelect.selectedIndex = i;
+          break;
+        }
+      }
+    }
+  }
+
+  if (form) {
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      clearError();
+
+      const name = (document.getElementById("name") as HTMLInputElement).value.trim();
+      const email = (document.getElementById("email_7950") as HTMLInputElement).value.trim();
+      const org = (document.getElementById("organisation") as HTMLInputElement).value.trim();
+      const message = (document.getElementById("the_decision_you_are_facing") as HTMLTextAreaElement).value.trim();
+      const paper_name = (document.getElementById("paper_name") as HTMLInputElement).value.trim();
+      const service_interest = (document.getElementById("service_interest") as HTMLSelectElement).value.trim();
+
+      // Front-end validation
+      if (!name) {
+        showError("Please enter your name.");
+        return;
+      }
+      if (!email || !validateEmail(email)) {
+        showError("Please enter a valid email address.");
+        return;
+      }
+      if (!message) {
+        showError("Please enter your message details.");
+        return;
+      }
+
+      // Lock form inputs
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: name,
+            organisation: org,
+            email: email,
+            the_decision_you_are_facing: message,
+            paper_name,
+            service_interest
+          })
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          showSuccess();
+        } else {
+          showError(result.error || "A submission error occurred. Please try again.");
+        }
+      } catch (error) {
+        console.error("Submission Error:", error);
+        showError("Network error. Please try again or contact us directly at hello@circularecosystems.io.");
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send message";
+      }
+    });
+  }
+</script>

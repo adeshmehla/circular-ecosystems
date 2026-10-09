@@ -1,0 +1,178 @@
+---
+import recordImage from '../assets/record.jpg';
+---
+
+<section class="record" id="record">
+  <div class="wrap split">
+    <div class="figframe reveal d1">
+      <img src={recordImage.src} alt="Circular Ecosystems learned this the expensive way." />
+      <span class="figcap">One precinct, seen as a system</span>
+    </div>
+    <div>
+      <span class="kicker reveal">The record</span>
+      <h2 class="h2 reveal d1">Circular Ecosystems learned this the expensive way.</h2>
+      <p class="reveal d2">
+        Circular Ecosystems started as an exchange platform at Kwinana, matching one operator&rsquo;s by-product to another operator&rsquo;s feedstock. The matches were real and the value was real, but nobody held the authority to act on them, so most of them died in a spreadsheet.
+      </p>
+      <p class="reveal d2">
+        The firm rebuilt the whole approach upstream, around the decision and the governance, because that is where the value actually leaks.
+      </p>
+    </div>
+  </div>
+  
+  <div class="wrap">
+    <div class="stats reveal d2" id="stats-row">
+      <div class="stat">
+        <div class="num animate-number" data-count="54" data-suffix="+">0</div>
+        <div class="cap">Operators across<br>the precinct</div>
+      </div>
+      <div class="stat">
+        <div class="num">
+          <em>~</em><span class="animate-number" data-count="40000">0</span>
+        </div>
+        <div class="cap">WORKERS IN THE WESTERN TRADE COAST</div>
+      </div>
+      <div class="stat">
+        <div class="num animate-number" data-count="170" data-suffix="+">0</div>
+        <div class="cap">Exchange contracts<br>already running</div>
+      </div>
+      <div class="stat">
+        <div class="num">
+          <em>~$</em><span class="animate-number" data-count="15">0</span><em>B</em>
+        </div>
+        <div class="cap">IN ANNUAL GDP</div>
+      </div>
+    </div>
+    
+    <div class="statsrc reveal d2">
+      Kwinana Industrial Area / Western Trade Coast. Figures are indicative and approximate.
+    </div>
+  </div>
+</section>
+
+<script>
+  // Dynamic mesh simulation inside Kwinana precinct frame
+  const canvas = document.getElementById('precinct-mesh') as HTMLCanvasElement;
+  const ctx = canvas?.getContext('2d');
+
+  if (canvas && ctx) {
+    let width = 0;
+    let height = 0;
+    let points: Array<{x: number, y: number, ox: number, oy: number, phase: number}> = [];
+
+    function resize() {
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width;
+      canvas.height = rect.height;
+      width = canvas.width;
+      height = canvas.height;
+      
+      points = [];
+      const cols = 5;
+      const rows = 4;
+      for (let c = 0; c < cols; c++) {
+        for (let r = 0; r < rows; r++) {
+          const x = (c / (cols - 1)) * width * 0.8 + width * 0.1;
+          const y = (r / (rows - 1)) * height * 0.8 + height * 0.1;
+          points.push({
+            x, y,
+            ox: x, oy: y,
+            phase: Math.random() * Math.PI * 2
+          });
+        }
+      }
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    function animateMesh() {
+      if (!ctx || !canvas) return;
+      ctx.clearRect(0, 0, width, height);
+
+      const time = Date.now() * 0.001;
+
+      // Update positions
+      points.forEach(p => {
+        p.x = p.ox + Math.sin(time + p.phase) * 12;
+        p.y = p.oy + Math.cos(time * 0.8 + p.phase) * 8;
+      });
+
+      // Draw connections
+      ctx.strokeStyle = 'rgba(44, 120, 129, 0.15)';
+      ctx.lineWidth = 1;
+      for (let i = 0; i < points.length; i++) {
+        for (let j = i + 1; j < points.length; j++) {
+          const dx = points[i].x - points[j].x;
+          const dy = points[i].y - points[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 90) {
+            ctx.beginPath();
+            ctx.moveTo(points[i].x, points[i].y);
+            ctx.lineTo(points[j].x, points[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Draw nodes
+      points.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(199, 249, 208, 0.5)';
+        ctx.fill();
+      });
+
+      requestAnimationFrame(animateMesh);
+    }
+    animateMesh();
+  }
+
+  // Statistics Number Counter Script
+  const statsSection = document.getElementById('stats-row');
+  const numberElements = document.querySelectorAll('.animate-number');
+
+  function startCounting() {
+    numberElements.forEach(el => {
+      const target = parseInt(el.getAttribute('data-count') || '0', 10);
+      const suffix = el.getAttribute('data-suffix') || '';
+      const duration = 2000; // 2 seconds
+      const startTime = performance.now();
+
+      function updateNumber(now: number) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Easing function: easeOutQuad
+        const easeProgress = progress * (2 - progress);
+        const currentValue = Math.floor(easeProgress * target);
+
+        // Format commas for large numbers
+        if (target >= 1000) {
+          el.textContent = currentValue.toLocaleString() + suffix;
+        } else {
+          el.textContent = currentValue.toString() + suffix;
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(updateNumber);
+        }
+      }
+
+      requestAnimationFrame(updateNumber);
+    });
+  }
+
+  if (statsSection) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startCounting();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    observer.observe(statsSection);
+  }
+</script>

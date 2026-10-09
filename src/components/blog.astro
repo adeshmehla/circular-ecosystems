@@ -1,0 +1,73 @@
+---
+import { createClient, OAuthStrategy } from '@wix/sdk';
+import { posts } from '@wix/blog';
+import { wixImageUrl } from '../lib/wixImage';
+
+const wixClient = createClient({
+  modules: { posts },
+  auth: OAuthStrategy({
+    clientId: import.meta.env.PUBLIC_WIX_CLIENT_ID,
+  }),
+});
+
+let blogPosts: any[] = [];
+try {
+  const response = await wixClient.posts.listPosts({ paging: { limit: 6 } });
+  blogPosts = response.posts || [];
+} catch (e) {
+  console.error('blogs fetch failed:', e);
+}
+
+function formatDate(dateStr: string) {
+  if (!dateStr) return '';
+  return new Date(dateStr).toLocaleDateString('en-AU', { month: 'short', year: 'numeric' });
+}
+---
+
+<section class="blogs" id="blogs">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker reveal">blogs</span>
+      <h2 class="h2 reveal d1">The working papers behind the method.</h2>
+      <p class="lead reveal d2" style="margin-top: 22px;">
+        Each paper isolates a single structural problem in industrial transition.
+        Full papers go to qualified decision makers on request.
+      </p>
+    </div>
+
+    {blogPosts.length === 0 ? (
+      <p style="font-family: 'DM Mono'; color: var(--fg-faint); font-size: 13px; margin-top: 60px;">
+        Working papers coming soon.
+      </p>
+    ) : (
+      <div class="ins-grid">
+        {blogPosts.map((post, i) => {
+          const imgSrc = wixImageUrl(post.media?.wixMedia?.image, 680, 360);
+          return (
+            <a
+              class={`icard reveal${i % 2 !== 0 ? ' d1' : ''}`}
+              href={`/blog/${post.slug}`}
+            >
+              {imgSrc && (
+                <div class="icard-img">
+                  <img src={imgSrc} alt={post.title} loading="lazy" />
+                </div>
+              )}
+              <span class="itag">
+                {post.categories?.[0]?.label || 'blog'} · {formatDate(post._createdDate)}
+              </span>
+              <h3>{post.title}</h3>
+              <p>{post.excerpt || ''}</p>
+              <span class="ireq">Request the paper →</span>
+            </a>
+          );
+        })}
+      </div>
+    )}
+
+    <p class="ins-note reveal">
+      Circular Ecosystems also writes targeted briefings for a single decision context.{' '}
+      <b>Name the decision in front of you</b> and the paper that fits it comes back.
+    </p>
+  </div>
+</section>

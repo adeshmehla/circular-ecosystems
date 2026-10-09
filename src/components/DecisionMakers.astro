@@ -1,0 +1,76 @@
+---
+---
+<section class="dm" id="who">
+  <div class="wrap">
+    <div class="sec-head" style="max-width:60ch">
+      <span class="kicker reveal">Who it&rsquo;s for</span>
+      <h2 class="h2 reveal d1">Two decision makers. One problem to sequence.</h2>
+      <p class="lead reveal d2" style="margin-top:22px">Different chairs, the same underlying call: what has to happen first, and what breaks if it doesn&rsquo;t. Pick the seat that fits.</p>
+    </div>
+    
+    <!-- Tab Triggers -->
+    <div class="dm-tabs reveal d2">
+    <button class="dm-tab active" data-dm="gov"><span class="tnum">01</span>Government &amp; regulators</button>
+      <button class="dm-tab" data-dm="eco"><span class="tnum">02</span>Economic development &amp; regional authorities</button>
+     
+    </div>
+    
+    <!-- Tab Panes -->
+    <div class="dm-body">
+      <!-- Government Pane -->
+      <div class="dm-pane active" data-dm="gov" id="pane-gov">
+        <div class="dm-intro-wrap">
+          <p class="dm-intro">Departments and agencies committing public capital to industrial transition, who need the sequencing right before the money goes out the door.</p>
+          <a class="dm-cta" href="#contact">Bring the pipeline &rarr;</a>
+          <a class="dm-cta" href="/services" style="margin-top:10px;color:var(--fg-faint)">See our services &rarr;</a>
+        </div>
+        <ul class="dm-q">
+          <li>Which projects in this pipeline depend on infrastructure that doesn&rsquo;t exist yet?</li>
+          <li>What&rsquo;s the cascade exposure if the anchor proponent slips by two years?</li>
+          <li>Where does this capital strand if the system can&rsquo;t receive the project?</li>
+          <li>What governance has to be standing before the first dollar moves?</li>
+        </ul>
+      </div>
+      
+      <!-- Economic Development Pane -->
+      <div class="dm-pane" data-dm="eco" id="pane-eco">
+        <div class="dm-intro-wrap">
+          <p class="dm-intro">Regions and precincts trying to land several projects at once without duplicating infrastructure or stranding the ones that arrive first.</p>
+          <a class="dm-cta" href="#contact">Map the precinct &rarr;</a>
+          <a class="dm-cta" href="/services" style="margin-top:10px;color:var(--fg-faint)">See our services &rarr;</a>
+        </div>
+        <ul class="dm-q">
+          <li>Can the precinct actually carry every project that&rsquo;s been announced?</li>
+          <li>What shared infrastructure are four proponents about to build four times over?</li>
+          <li>Which tenant has to land first for the rest to pencil out?</li>
+          <li>Where should land get allocated so symbiosis stays possible later?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const tabs = document.querySelectorAll('.dm-tab');
+  const panes = document.querySelectorAll('.dm-pane');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Deactivate other tabs
+      tabs.forEach(t => t.classList.remove('active'));
+      // Activate clicked tab
+      tab.classList.add('active');
+
+      const targetDm = tab.getAttribute('data-dm');
+
+      // Swap panes
+      panes.forEach(pane => {
+        if (pane.getAttribute('data-dm') === targetDm) {
+          pane.classList.add('active');
+        } else {
+          pane.classList.remove('active');
+        }
+      });
+    });
+  });
+</script>

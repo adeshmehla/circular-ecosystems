@@ -1,0 +1,165 @@
+---
+import heroImage from '../assets/photo_2.jpg';
+---
+<header id="top" class="hero">
+  <!-- Interactive canvas backdrop -->
+  <div class="hero-bg">
+    <img 
+      src={heroImage.src} 
+      alt="Industrial precinct at dusk"
+      class="hero-bg-img"
+    />
+    <canvas id="net"></canvas>
+  </div>
+  
+  <div class="hero-inner">
+    <div class="wrap">  
+      <div class="eyebrow-row">
+        <span class="kicker fade-up d1">Decision intelligence for industrial transition</span>
+      </div>
+      <h1 class="display">
+        <span class="line"><span>See the whole system</span></span>
+        <span class="line"><span>before you commit</span></span>
+        <span class="line"><span>the capital.</span></span>
+      </h1>
+      <p class="lead fade-up d2">
+        Individual projects are being funded faster than anyone is sequencing the system those projects rely on. Circular Ecosystems is the decision intelligence engine that models the whole system first, so the money lands in the right order.
+      </p>
+      <div class="hero-cta fade-up d3">
+        <a href="#contact" class="btn btn-solid">Start a conversation</a>
+        <a href="#platform" class="btn">See how it works</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="hero-meta">
+    <div class="wrap">
+      <span class="mono">Perth, Western Australia &middot; Working with industrial precincts and regional corridors worldwide</span>
+      <span class="scrollcue">SCROLL<span class="bar"></span></span>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Hero load animation activation
+  window.addEventListener('DOMContentLoaded', () => {
+    const hero = document.getElementById('top');
+    if (hero) {
+      hero.classList.add('lit');
+    }
+  });
+
+  // Canvas interactive particle network
+  const canvas = document.getElementById('net') as HTMLCanvasElement;
+  const ctx = canvas?.getContext('2d');
+
+  if (canvas && ctx) {
+    let particles: Array<Particle> = [];
+    let mouse = { x: null as number | null, y: null as number | null, radius: 150 };
+
+    class Particle {
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      radius: number;
+
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = (Math.random() - 0.5) * 0.4;
+        this.vy = (Math.random() - 0.5) * 0.4;
+        this.radius = Math.random() * 1.5 + 1;
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        // Boundary collision
+        if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
+        if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
+      }
+
+      draw() {
+        if (!ctx) return;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(199, 249, 208, 0.45)';
+        ctx.fill();
+      }
+    }
+
+    function initCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      particles = [];
+      const count = Math.min(Math.floor((canvas.width * canvas.height) / 11000), 100);
+      for (let i = 0; i < count; i++) {
+        particles.push(new Particle());
+      }
+    }
+
+    window.addEventListener('resize', initCanvas);
+    initCanvas();
+
+    // Mouse listeners
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    window.addEventListener('mouseleave', () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    function animate() {
+      if (!ctx || !canvas) return;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+
+        // Connect particles
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 120) {
+            const alpha = (1 - dist / 120) * 0.18;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(44, 120, 129, ${alpha})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        }
+
+        // Connect to mouse
+        if (mouse.x !== null && mouse.y !== null) {
+          const dx = particles[i].x - mouse.x;
+          const dy = particles[i].y - mouse.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < mouse.radius) {
+            const alpha = (1 - dist / mouse.radius) * 0.22;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.strokeStyle = `rgba(199, 249, 208, ${alpha})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        }
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  }
+</script>

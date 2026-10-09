@@ -1,0 +1,368 @@
+---
+// Standalone page – no layout imports needed
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sequence &middot; The missing link to scaling industrial circularity &middot; Circular Ecosystems</title>
+<meta name="description" content="Industrial ecosystems do not stall because the technology fails to match. They stall because the order of four upstream commitments fixed the circularity ceiling before any exchange was possible. The Sequence Model from Circular Ecosystems.">
+<meta name="theme-color" content="#004A5A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#004A5A; --forest-deep:#003540; --forest-light:#1A6271;
+  --mint:#C7F9D0; --mint-soft:#DDFCE3;
+  --sand:#F2E9DD; --sand-deep:#E5DAC8;
+  --black:#0A0A0A; --white:#FFFFFF;
+  --ink:#004A5A; --ink-mute:#2A6470; --ink-soft:#5A7B82;
+  --rule:rgba(0,74,90,0.14); --rule-light:rgba(255,255,255,0.14); --rule-mint:rgba(199,249,208,0.22);
+  --serif:'Cormorant Garamond','Times New Roman',serif;
+  --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',monospace;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --maxw:1180px; --gutter:clamp(20px,4vw,56px);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;scroll-behavior:smooth;}
+body{font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.68;color:var(--forest);background:var(--white);}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.13;letter-spacing:-0.01em;color:var(--forest);}
+h1{font-size:clamp(44px,6.2vw,86px);}
+h2{font-size:clamp(30px,4vw,52px);}
+h3{font-size:clamp(22px,2.4vw,30px);}
+h4{font-size:clamp(16px,1.4vw,19px);font-weight:600;font-family:var(--sans);letter-spacing:0;}
+em{font-style:italic;font-family:var(--serif);}
+p{margin:0;} p+p{margin-top:1.1em;}
+a{color:inherit;text-decoration:none;transition:color .18s ease,opacity .18s ease;}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter);}
+.bg-forest{background:var(--forest);color:var(--white);}
+.bg-forest-deep{background:var(--forest-deep);color:var(--white);}
+.bg-sand{background:var(--sand);}
+.bg-mint{background:var(--mint);}
+/* FIX: was used on a section but never defined */
+.bg-white{background:var(--white);}
+.bg-forest h1,.bg-forest h2,.bg-forest h3,.bg-forest-deep h1,.bg-forest-deep h2,.bg-forest-deep h3{color:var(--white);}
+
+.eyebrow{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--forest);display:inline-flex;align-items:center;gap:12px;}
+.eyebrow::before{content:'';display:inline-block;width:28px;height:1px;background:currentColor;opacity:.5;}
+.bg-forest .eyebrow,.bg-forest-deep .eyebrow{color:var(--mint);}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.10em;text-transform:uppercase;color:var(--ink-mute);}
+.bg-forest .kicker,.bg-forest-deep .kicker{color:var(--mint);}
+
+/* ---- top bar ---- */
+.topbar{border-bottom:1px solid var(--rule-light);}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;}
+.brand{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mint);}
+.brand b{font-weight:500;color:var(--white);}
+.topbar .ref{font-family:var(--mono);font-size:11px;letter-spacing:.10em;color:rgba(255,255,255,.6);}
+
+/* ---- hero ---- */
+.hero{padding:clamp(56px,9vw,120px) 0 clamp(48px,7vw,90px);position:relative;overflow:hidden;}
+.hero::after{content:'';position:absolute;inset:0;background:
+  radial-gradient(120% 80% at 88% 8%,rgba(199,249,208,.10),transparent 60%),
+  radial-gradient(90% 70% at 6% 100%,rgba(26,98,113,.5),transparent 55%);pointer-events:none;}
+.hero .wrap{position:relative;z-index:2;}
+.hero h1{margin-top:26px;max-width:14ch;}
+.hero h1 .ital{font-style:italic;color:var(--mint);}
+.standfirst{font-family:var(--serif);font-size:clamp(20px,2.3vw,28px);line-height:1.4;color:rgba(255,255,255,.86);max-width:34ch;margin-top:30px;}
+.byline{margin-top:34px;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:rgba(255,255,255,.62);}
+.byline span{color:var(--mint);}
+
+/* ---- generic section ---- */
+section{padding:clamp(58px,8vw,104px) 0;}
+.lede{font-family:var(--serif);font-size:clamp(23px,2.8vw,34px);line-height:1.32;letter-spacing:-.01em;max-width:24ch;}
+.col2{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(28px,5vw,72px);align-items:start;}
+.col2 .body p{font-size:17px;color:var(--ink-mute);max-width:60ch;}
+.bg-forest .col2 .body p,.bg-forest-deep .col2 .body p{color:rgba(255,255,255,.82);}
+@media(max-width:820px){.col2{grid-template-columns:1fr;gap:24px;}}
+
+.note{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--ink-soft);text-transform:uppercase;}
+
+/* ---- the sequence rail ---- */
+.modelhead{text-align:left;max-width:30ch;}
+.rail{margin-top:clamp(34px,5vw,58px);display:grid;grid-template-columns:repeat(4,1fr);gap:14px;position:relative;}
+@media(max-width:880px){.rail{grid-template-columns:1fr;}}
+.node{border:1px solid var(--rule-light);border-radius:3px;background:rgba(255,255,255,.02);padding:22px 20px 24px;cursor:pointer;transition:background .2s ease,border-color .2s ease,transform .2s ease;position:relative;text-align:left;}
+.node:hover{background:rgba(199,249,208,.05);border-color:var(--rule-mint);}
+.node .idx{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--mint);}
+.node .ttl{font-family:var(--serif);font-size:23px;line-height:1.1;color:var(--white);margin-top:14px;}
+.node .one{font-size:13.5px;color:rgba(255,255,255,.66);margin-top:12px;line-height:1.5;}
+.node .open{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(199,249,208,.7);margin-top:16px;display:flex;align-items:center;gap:8px;}
+.node .open .plus{display:inline-block;width:14px;height:14px;border:1px solid rgba(199,249,208,.5);border-radius:50%;position:relative;}
+.node .open .plus::before,.node .open .plus::after{content:'';position:absolute;background:rgba(199,249,208,.8);transition:opacity .2s;}
+.node .open .plus::before{left:3px;right:3px;top:6px;height:1px;}
+.node .open .plus::after{top:3px;bottom:3px;left:6px;width:1px;}
+.node.active .open .plus::after{opacity:0;}
+.node.active{background:rgba(199,249,208,.07);border-color:var(--mint);}
+/* lock progress bar under rail */
+.lockbar{margin-top:18px;height:2px;background:rgba(255,255,255,.12);position:relative;border-radius:2px;overflow:hidden;}
+.lockbar i{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,var(--mint),var(--forest-light));transition:width .6s cubic-bezier(.4,0,.2,1);}
+.lockcap{display:flex;justify-content:space-between;margin-top:8px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);}
+
+/* detail panel */
+.detail{margin-top:18px;border:1px solid var(--rule-mint);border-radius:3px;background:rgba(0,53,64,.6);overflow:hidden;max-height:0;opacity:0;transition:max-height .4s ease,opacity .3s ease;}
+.detail.show{max-height:620px;opacity:1;}
+.detail .inner{padding:clamp(24px,4vw,38px);display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+@media(max-width:780px){.detail .inner{grid-template-columns:1fr;gap:18px;}}
+.detail .cell .lab{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--mint);}
+.detail .cell p{font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.82);margin-top:10px;}
+.detail .cell.read{grid-column:1/-1;border-top:1px solid var(--rule-light);padding-top:20px;margin-top:2px;}
+.detail .cell.read p{color:#fff;font-family:var(--serif);font-size:19px;line-height:1.45;}
+
+/* ---- four-up grid for downstream / orchestrator ---- */
+.holders{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);margin-top:40px;border:1px solid var(--rule);}
+@media(max-width:780px){.holders{grid-template-columns:1fr 1fr;}}
+.holder{background:var(--white);padding:26px 22px 30px;}
+.bg-sand .holder{background:var(--sand);}
+.holder .who{font-family:var(--serif);font-size:21px;color:var(--forest);}
+.holder .pos{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:8px;}
+.holder p{font-size:14px;color:var(--ink-mute);margin-top:14px;line-height:1.55;}
+
+/* ---- apply / products ---- */
+.apply{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px;}
+@media(max-width:780px){.apply{grid-template-columns:1fr;}}
+.prod{border:1px solid var(--rule-light);border-radius:3px;padding:28px 24px;background:rgba(255,255,255,.02);}
+.prod .pn{font-family:var(--serif);font-size:26px;color:var(--mint);}
+.prod .pr{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:6px;}
+.prod p{font-size:14.5px;color:rgba(255,255,255,.82);margin-top:16px;line-height:1.6;}
+
+.pullquote{font-family:var(--serif);font-size:clamp(26px,3.6vw,46px);line-height:1.22;letter-spacing:-.01em;max-width:18ch;}
+.pullquote .ital{font-style:italic;color:var(--mint);}
+
+/* ---- footer ---- */
+.foot{border-top:1px solid var(--rule-light);padding:42px 0 56px;}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:flex-end;}
+.foot .tag{font-family:var(--serif);font-size:22px;color:var(--white);}
+.foot .meta{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:rgba(255,255,255,.55);line-height:1.9;text-align:right;}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.in{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<!-- ============ TOP ============ -->
+<div class="bg-forest-deep topbar">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Circular Ecosystems – home">
+  <img height="50px" src="/logoofCE.png" alt="Circular Ecosystems" class="brand-logo" />
+</a>
+    <div class="ref">CE&middot;MODEL&middot;SEQUENCE&middot;2026&middot;001</div>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<div class="bg-forest-deep hero">
+  <div class="wrap">
+    <div class="eyebrow">Working model &middot; Industrial circularity</div>
+    <h1><span class="ital">Sequence:</span> the missing link to scaling industrial circularity</h1>
+    <p class="standfirst">Industrial ecosystems do not stall because the technology fails to match. They stall because the order of four upstream commitments fixed the ceiling before any exchange was ever possible.</p>
+    <div class="byline">A decision model from <span>Circular Ecosystems</span> &nbsp;/&nbsp; Kwinana &middot; South West WA &middot; NT corridor &middot; national critical minerals</div>
+  </div>
+</div>
+
+<!-- ============ THE WRONG LAYER ============ -->
+<section class="bg-white reveal">
+  <div class="wrap col2">
+    <div class="head">
+      <div class="eyebrow">01 &middot; The wrong layer</div>
+      <p class="lede" style="margin-top:22px;">Almost all the capital aimed at industrial circularity arrives at the project layer, and it arrives too late to matter.</p>
+    </div>
+    <div class="body">
+      <p>A grant funds one plant. An offtake secures one stream. A matching platform pairs two operators on the assumption that they already sit close enough to trade. Each instrument works on the project in front of it, and each assumes the surrounding system was built to allow the exchange in the first place. Most systems were not.</p>
+      <p>The layer that decides whether any of this is viable sits earlier and higher, in decisions about where parcels go, which anchor lands first, who owns the shared spine, and who holds the authority to trade one proponent's interest against another's. Those decisions close quietly, years before the funding shows up, and they set a ceiling that no later instrument can lift. That gap is why precincts full of sound individual projects still fail to behave as systems.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE MODEL / RAIL ============ -->
+<section class="bg-forest-deep reveal">
+  <div class="wrap">
+    <div class="eyebrow">02 &middot; The Sequence Model</div>
+    <h2 class="modelhead" style="margin-top:22px;">Four commitments lock the ceiling, and they lock in order.</h2>
+    <p class="standfirst" style="max-width:46ch;color:rgba(255,255,255,.78);">Each commitment has a window while it is still movable, a lock point after which it is fixed in concrete and contract, and a failure signature you can read downstream once it was set wrong. Select a node.</p>
+
+    <div class="rail" id="rail">
+      <!-- node 1 -->
+      <div class="node" data-i="0" data-lock="22">
+        <div class="idx">01 / LAND GEOMETRY</div>
+        <div class="ttl">Where things sit</div>
+        <div class="one">Parcel allocation and spacing set the distance-decay curve for every shared utility.</div>
+        <div class="open"><span class="plus"></span> Window</div>
+      </div>
+      <!-- node 2 -->
+      <div class="node" data-i="1" data-lock="48">
+        <div class="idx">02 / ANCHOR SEQUENCE</div>
+        <div class="ttl">Who lands first</div>
+        <div class="one">The first anchor's input-output profile becomes the gravity well every later tenant designs around.</div>
+        <div class="open"><span class="plus"></span> Window</div>
+      </div>
+      <!-- node 3 -->
+      <div class="node" data-i="2" data-lock="74">
+        <div class="idx">03 / SHARED SPINE</div>
+        <div class="ttl">Who owns the connection</div>
+        <div class="one">Ownership and pricing of the common-user infrastructure decide whether exchange is contractible at all.</div>
+        <div class="open"><span class="plus"></span> Window</div>
+      </div>
+      <!-- node 4 -->
+      <div class="node" data-i="3" data-lock="100">
+        <div class="idx">04 / DECISION AUTHORITY</div>
+        <div class="ttl">Who can arbitrate</div>
+        <div class="one">Authority to make system-level trade-offs is either vested in a neutral holder or left unassigned.</div>
+        <div class="open"><span class="plus"></span> Window</div>
+      </div>
+    </div>
+
+    <div class="lockbar"><i id="lockfill"></i></div>
+    <div class="lockcap"><span>Structure planning</span><span>Tenant attraction</span><span>Infrastructure decision</span><span>Governance design &middot; locked</span></div>
+
+    <div class="detail" id="detail">
+      <div class="inner">
+        <div class="cell"><div class="lab">Window</div><p id="d-window"></p></div>
+        <div class="cell"><div class="lab">Lock point</div><p id="d-lock"></p></div>
+        <div class="cell"><div class="lab">Failure signature</div><p id="d-fail"></p></div>
+        <div class="cell"><div class="lab">What it caps</div><p id="d-caps"></p></div>
+        <div class="cell read"><p id="d-read"></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY NOT DOWNSTREAM ============ -->
+<section class="bg-white reveal">
+  <div class="wrap col2">
+    <div class="head">
+      <div class="eyebrow">03 &middot; Why it cannot be fixed later</div>
+      <p class="lede" style="margin-top:22px;">A subsidy can change a project's return. It cannot move a plant four kilometres closer.</p>
+    </div>
+    <div class="body">
+      <p>No instrument arriving at the project layer can re-profile an anchor that was contracted years earlier, retrofit shared ownership onto infrastructure already vested in one operator, or appoint an arbiter once the roles have hardened and every party has dug into its position. The physics make the point bluntly: heat, water, hydrogen, and recoverable CO2 each carry a distance-decay curve, and a stream that could have cascaded across a short internal run instead travels kilometres or gets vented once the geometry is poured.</p>
+      <p>Kwinana shows what a high ceiling looks like when proximity and exchange were possible early. Kalundborg shows the same. Far more common is the precinct that was allocated for individual lot yield, signed its largest anchor on land-yield logic, and then spent a decade chasing counterparties whose economics never closed. The projects were fine. The sequence was wrong, and the sequence is the part the money never reaches.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ORCHESTRATOR ============ -->
+<section class="bg-sand reveal">
+  <div class="wrap">
+    <div class="eyebrow">04 &middot; The role the sequence creates</div>
+    <h2 style="margin-top:22px;max-width:24ch;">Each party holds one commitment, which is exactly why none can arbitrate the others.</h2>
+    <p style="font-size:17px;color:var(--ink-mute);max-width:62ch;margin-top:20px;">Look at who actually controls each lock. The position that makes a party essential to one commitment is the same position that disqualifies it from neutrally trading the other three. The only party able to sequence across all four is the one with no stake in any single one of them.</p>
+
+    <div class="holders">
+      <div class="holder"><div class="who">Developer</div><div class="pos">Holds &middot; Land geometry</div><p>Optimises parcel yield and absorption, not the exchange distance between future counterparties.</p></div>
+      <div class="holder"><div class="who">Anchor operator</div><div class="pos">Holds &middot; Anchor sequence</div><p>Contracts its own inputs and offtake first, and prices for its own balance sheet rather than the system's.</p></div>
+      <div class="holder"><div class="who">Infrastructure owner</div><div class="pos">Holds &middot; Shared spine</div><p>Recovers its asset against the tenants it already serves, with little reason to price for exchanges it does not yet see.</p></div>
+      <div class="holder"><div class="who">Agency</div><div class="pos">Holds &middot; Mandate &amp; funding</div><p>Carries program objectives and grant timelines, and rarely carries authority to bind private parties to a system trade.</p></div>
+    </div>
+
+    <p style="font-size:18px;color:var(--forest);max-width:60ch;margin-top:36px;font-family:var(--serif);line-height:1.45;">The independent orchestrator is not a service bolted onto a developer or an agency. It is a structural position, and only a party with no commercial stake in any single lock can hold it. Circular Ecosystems is built to hold exactly that position.</p>
+  </div>
+</section>
+
+<!-- ============ APPLY ============ -->
+<section class="bg-forest reveal">
+  <div class="wrap">
+    <div class="eyebrow">05 &middot; Reading the sequence</div>
+    <h2 style="margin-top:22px;max-width:22ch;">The model becomes a live instrument across three layers.</h2>
+    <div class="apply">
+      <div class="prod">
+        <div class="pn">Khora</div>
+        <div class="pr">Decision intelligence</div>
+        <p>Reads where a region sits on the sequence and how much of each window remains open, before the next commitment locks.</p>
+      </div>
+      <div class="prod">
+        <div class="pn">Morph&#275;</div>
+        <div class="pr">Transition blueprint</div>
+        <p>Sets the order of moves that keeps the ceiling high while parcels fill and anchors arrive, rather than after.</p>
+      </div>
+      <div class="prod">
+        <div class="pn">Kosmos</div>
+        <div class="pr">Live cascade register</div>
+        <p>Holds the sequence in view for every party as commitments land, so a lock is never crossed unseen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLOSE ============ -->
+<section class="bg-forest-deep reveal" style="padding-top:clamp(70px,9vw,120px);">
+  <div class="wrap">
+    <p class="pullquote">The order is decided <span class="ital">before</span> the first tenant signs. Read it while the windows are still open.</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<div class="bg-forest-deep foot">
+  <div class="wrap">
+    <div class="tag">See the whole system. Make the right move.</div>
+    <div class="meta">
+      Circular Ecosystems &middot; Perth WA<br>
+      CE-MODEL-SEQUENCE-2026-001 &middot; Working model v1<br>
+      Internal IP. Not for external distribution without review.
+    </div>
+  </div>
+</div>
+
+<!-- FIX: is:inline prevents Astro bundling this as an ES module,
+     which could cause DOM queries to run before elements are ready -->
+<script is:inline>
+const DATA=[
+ {window:"Open during structure planning and rezoning, while parcels, setbacks, corridor reservations, and easements are still on paper and nothing is poured.",
+  lock:"First title transfer and the first major build. After that the distance between any two exchanging parties is fixed in concrete for the life of the precinct.",
+  fail:"Streams that could have cascaded across a short internal run travel kilometres or get vented, because parcels were allocated for individual lot yield rather than exchange distance.",
+  caps:"The distance-decay curve on every shared utility, and with it the recoverable by-product value across the whole precinct.",
+  read:"Geometry sets the ceiling for everything that follows. No incentive moves a plant after the slab is down."},
+ {window:"Open during tenant attraction, before the first anchor commits its supply and offtake.",
+  lock:"The first anchor's contracts. Its input-output profile becomes the gravity well that every later tenant has to design its own economics around.",
+  fail:"A precinct signs its largest emitter or consumer first on land-yield logic, then spends a decade chasing counterparties whose numbers never close because the anchor was placed and priced for itself.",
+  caps:"Which exchanges are even possible later, and the economics every subsequent tenant inherits.",
+  read:"The first signature decides the field of play. Sequencing the anchor for the system beats any later subsidy."},
+ {window:"Open at the common-user infrastructure investment decision, while ownership and pricing of the water, energy, logistics, and by-product spine are still being structured.",
+  lock:"The financing and operating model of that spine. Who owns it and how it prices access decides whether exchange is contractible at all.",
+  fail:"By-product streams that pencil out technically die in commercial structuring, because no neutral party owns the connecting infrastructure and bilateral deals collapse under counterparty and tenure risk.",
+  caps:"Whether the exchanges the geometry allows can actually be put under contract and financed.",
+  read:"A dollar into the right shared spine supports many projects. The same dollar split across project subsidies supports one and seeds none."},
+ {window:"Open at governance design, before the operating model is set and the roles harden around it.",
+  lock:"The moment authority to make system-level trade-offs is either vested in a neutral holder or left unassigned. Unassigned is the default, and the default is itself a decision.",
+  fail:"Every cross-boundary exchange gets renegotiated from zero, because no party can trade one proponent's interest against another's, so the system defaults to standalone projects that happen to share a fence line.",
+  caps:"Whether the ceiling set by the first three commitments can ever actually be reached.",
+  read:"Without a holder of system-level authority, nobody is positioned to act on the value the other three locks left on the table."}
+];
+
+const rail=document.getElementById('rail');
+const nodes=[...rail.querySelectorAll('.node')];
+const detail=document.getElementById('detail');
+const fill=document.getElementById('lockfill');
+let active=-1;
+
+function setNode(i){
+  if(active===i){ // toggle closed
+    nodes[i].classList.remove('active');
+    detail.classList.remove('show');
+    active=-1; fill.style.width='0';
+    return;
+  }
+  nodes.forEach(n=>n.classList.remove('active'));
+  nodes[i].classList.add('active');
+  active=i;
+  const d=DATA[i];
+  document.getElementById('d-window').textContent=d.window;
+  document.getElementById('d-lock').textContent=d.lock;
+  document.getElementById('d-fail').textContent=d.fail;
+  document.getElementById('d-caps').textContent=d.caps;
+  document.getElementById('d-read').textContent=d.read;
+  detail.classList.add('show');
+  fill.style.width=nodes[i].dataset.lock+'%';
+}
+nodes.forEach((n,i)=>n.addEventListener('click',()=>setNode(i)));
+
+// scroll reveal
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
